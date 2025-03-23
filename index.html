@@ -31,8 +31,15 @@
         
     </header>
     <section class="booking-form">
-        <h2>Book Now-</h2>
         <form id="bookingForm">
+            <h2>Book Now-</h2>
+        <form id="bookingForm">
+            <!-- Full Name -->
+            <input type="text" id="Name" name="Name" placeholder="Name" required>
+        
+            <!-- Phone Number -->
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required pattern="[0-9]{10}" title="Enter a valid 10-digit phone number">
+        
             <!-- From-->
             <select id="from" name="from" required>
                 <option value="" disabled selected>From</option>

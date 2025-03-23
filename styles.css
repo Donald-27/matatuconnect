@@ -55,10 +55,11 @@ h1 {
 /* Navigation tabs */
 .header-nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     gap: 15px;
     transition: opacity 0.5s ease-in-out;
+  
 }
 
 .header-nav ul {
@@ -76,14 +77,15 @@ h1 {
 /* Navigation Links */
 .header-nav ul li a {
     text-decoration: none;
-    background: white;
-    color: #043263;
+    background: transparent;
+    color: whitesmoke;
     padding: 10px 15px;
     border-radius: 5px;
     font-size: 16px;
     font-weight: bold;
     transition: background 0.3s, color 0.4s;
     display: inline-block;
+    border-radius: 5px;
 }
 
 /* Header section hover*/
@@ -111,7 +113,9 @@ h1 {
 }
 
 /* Responsive Navigation */
+       
 @media (max-width: 800px) {
+
     .header-nav {
         display: none; 
         flex-direction: column;
@@ -119,17 +123,20 @@ h1 {
         top: 60px;
         left: 0;
         width: 100%;
-        background: #0e4075;
-        padding: 10px 0;
+        background: #043263;
+        padding: 10px;
         text-align: center;
     }
 
     .header-nav ul {
         flex-direction: column;
+        gap: 20px;
+
     }
 
     .header-nav ul li {
         margin: 10px 0;
+    
     }
 
     /* Shows the hamburger button on smaller screens */
@@ -140,6 +147,9 @@ h1 {
         display: flex;
     }
 }
+
+
+
 
 /* 🔹 Book  Now Section) */
 .booking-container {
