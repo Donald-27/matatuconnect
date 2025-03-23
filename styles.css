@@ -1,0 +1,236 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* wrap main content */
+.main-content {
+    flex: 1;  
+}
+body {
+    background-color: rgb(236, 224, 217);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header section*/
+header {
+    width: 100vw;
+    background-color: #072a51;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Header Line */
+.header-line {
+    width: 80%;
+    height: 0.6px;
+    background-color: gray;
+    border: none;
+    margin: 10px auto;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: auto;
+    margin-top: 47px;
+}
+h1 {
+    font-size: 10px;
+    margin: 0;
+    letter-spacing: 2px;
+    word-spacing: 7px;
+}
+
+/* Navigation tabs */
+.header-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.header-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 130px;
+}
+
+.header-nav ul li {
+    display: inline;
+}
+
+/* Navigation Links */
+.header-nav ul li a {
+    text-decoration: none;
+    background: white;
+    color: #043263;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.4s;
+    display: inline-block;
+}
+
+/* Header section hover*/
+.header-nav ul li a:hover {
+    background: #043263;
+    color: white;
+    border: 1px solid white;
+    transform: scale(1.1);
+    text-shadow: 0px 0px 8px rgba(255, 193, 7, 0.8);
+}
+
+/* Hamburger Menu*/
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    margin-top: 46px;
+    color: white;
+    background: none;
+    border: none;
+    z-index: 1000;
+}
+
+/* Responsive Navigation */
+@media (max-width: 800px) {
+    .header-nav {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #0e4075;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .header-nav ul {
+        flex-direction: column;
+    }
+
+    .header-nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Shows the hamburger button on smaller screens */
+    .hamburger {
+        display: block;
+    }
+    .header-nav.active {
+        display: flex;
+    }
+}
+
+/* 🔹 Book  Now Section) */
+.booking-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease-in-out;
+}
+.booking-container:hover {
+    background-color: #ffcc99; 
+}
+
+/* Booking Form */
+#bookingForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    row-gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Inputs & Dropdowns */
+#bookingForm input,
+#bookingForm select,
+#bookingForm textarea {
+    flex: none; 
+    width: 120px; 
+    padding: 8px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px; 
+    background-color: white;
+    margin: 10px; 
+}
+select {
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Calendar */
+input[type="date"] {
+    cursor: pointer;
+}
+
+/* button styles*/
+#bookingForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6600;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+#bookingForm button:hover {
+    background-color: white;
+    color: #ff6600;
+    border: 1px solid #ff6600;
+}
+
+/* Responsive styling */
+@media (max-width: 1024px) {
+    #bookingForm {
+        flex-direction: column;
+    }
+    #bookingForm input,
+    #bookingForm select,
+    #bookingForm textarea,
+    #bookingForm button {
+        width: 100%;
+    }
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #043263;
+}
+
+
+/* Footer */
+footer {
+    background-color: #072a51;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
