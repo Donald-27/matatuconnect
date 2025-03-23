@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navMenu = document.getElementById("nav-menu");
 
     if (menuToggle && navMenu) {
-        // Toggle menu on click
+        
         menuToggle.addEventListener("click", () => {
             navMenu.classList.toggle("active");
             menuToggle.innerHTML = navMenu.classList.contains("active") ? "&times;" : "&#9776;"; // Toggle ☰ and ✖
@@ -33,4 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const aboutSection = document.querySelector(".about-section");
+    function revealAboutSection() {
+        const sectionPos = aboutSection.getBoundingClientRect().top;
+        const screenPos = window.innerHeight / 1.2;
+        if (sectionPos < screenPos) {
+            aboutSection.classList.add("visible");
+        }
+    }
+    window.addEventListener("scroll", revealAboutSection);
 });
