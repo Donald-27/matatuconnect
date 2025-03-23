@@ -46,3 +46,44 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     window.addEventListener("scroll", revealAboutSection);
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("vehicleRegistrationForm");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get form data
+        const ownerName = document.getElementById("ownerName").value;
+        const contactNumber = document.getElementById("contactNumber").value;
+        const email = document.getElementById("email").value;
+        const vehicleType = document.getElementById("vehicleType").value;
+        const vehicleNumber = document.getElementById("vehicleNumber").value;
+        const seatingCapacity = document.getElementById("seatingCapacity").value;
+        const vehicleImage = document.getElementById("vehicleImage").files[0]; // Get uploaded file
+
+        // Validate form fields
+        if (!ownerName || !contactNumber || !email || !vehicleType || !vehicleNumber || !seatingCapacity || !vehicleImage) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        // Create an object to store form data (can be sent to a server)
+        const vehicleData = {
+            ownerName,
+            contactNumber,
+            email,
+            vehicleType,
+            vehicleNumber,
+            seatingCapacity,
+            vehicleImage: vehicleImage.name, // Just storing filename for now
+        };
+
+        console.log("Vehicle Registered:", vehicleData);
+
+        // Show success message (or send data to a backend)
+        alert("Submission was successful!We will let you know once we verify the details!");
+
+        // Reset form after submission
+        form.reset();
+    });
+});

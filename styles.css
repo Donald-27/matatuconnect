@@ -52,9 +52,11 @@ header {
 }
 h1 {
     font-size: 10px;
-    margin: 0;
-    letter-spacing: 2px;
-    word-spacing: 7px;
+    float: right;
+  margin-right: 100px;
+  margin-top: 5px;
+    letter-spacing: 5px;
+    word-spacing: 8px;
 }
 
 /* Navigation tabs */
@@ -226,12 +228,18 @@ input[type="date"] {
 /* Responsive styling */
 @media (max-width: 1024px) {
     #bookingForm {
-        display: grid;
-        grid-template-columns: 1fr; 
+         
         gap: 16px;
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+        gap: 18px;
+           
+            
+            width: 100%;
+        
     }
 
     #bookingForm input,
@@ -274,104 +282,175 @@ footer {
     text-align: center;
     padding: 10px;
 }
-.about-section {
-    background-color: #f9f9f9;
-    padding: 50px 20px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
 
-.about-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.about-section h2 {
-    color: #072a51;
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.about-section ul {
-    list-style: none;
-    padding: 0;
-    font-size: 18px;
-    text-align: left;
-    max-width: 600px;
-    margin: auto;
-}
-
-.about-section ul li {
-    margin: 10px 0;
-    padding: 10px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-}
-   
 #booking-offices {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 56px; 
+    width: 95%; 
+    margin: auto; 
     padding: 20px;
-    background-color:transparent;
-    border-radius: 8px;
-    margin-top: 20px;
-    display: grid; /* grid layout */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 75px; 
-    max-width: 80%; 
-    margin: 0 auto; 
-}
-
-#booking-offices h2 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: darkblue;
-    
+   
 }
 
 .office {
-    background-color: whitesmoke;
-    padding: 20px;
-    border-radius: 8px; 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
-    border: 1px solid #ddd;
-    height: 100%;
+    background: whitesmoke;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+@media (max-width: 1200px) {
+    #booking-offices { background-color: whitesmoke;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */}}
+
+/* Small Screen: 1 Column Layout */
+@media (max-width: 800px) { 
+    #booking-offices { background-color: whitesmoke;
+        grid-template-columns: repeat(2, 1fr); /* Change to 1 column */
+    }
+    
 }
 
+/* Vehicle Registration Section */
+#register-vehicle {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    border: 2px solid #007bff;
+    transition: transform 0.3s ease-in-out;
+}
 
-.office h3 {
-    font-size: 1.5em;
+#register-vehicle:hover {
+    transform: translateY(-5px);
+}
+
+#register-vehicle h2 {
+    text-align: center;
+    margin-bottom: 20px;
     color: #007bff;
-    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.office p {
-    font-size: 1em;
-    color: #555;
+/* Grid Layout for Form */
+#vehicleRegistrationForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+    gap: 18px;
+       
+        
+        width: 100%;
+    }
+    
+.full-width {
+    grid-column: span 2; 
 }
 
-.office em {
-    font-style: italic;
-    color: #777;
+/* Label Styling */
+#vehicleRegistrationForm label {
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
 }
 
-/* Optional: Adjustments for very small screens if needed */
-@media (max-width: 500px) {
-    #booking-offices {
-        max-width: 90%; /* Slightly increase width on smaller screens */
+/* Input Fields & Select Box */
+#vehicleRegistrationForm input,
+#vehicleRegistrationForm select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: #f8f9fa;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+/* Input Focus Effect */
+#vehicleRegistrationForm input:focus,
+#vehicleRegistrationForm select:focus {
+    border-color: #007bff;
+    background: #fff;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.4);
+}
+
+/* File Upload Styling */
+#vehicleRegistrationForm input[type="file"] {
+    border: none;
+    padding: 10px;
+    background: #f1f1f1;
+    border-radius: 8px;
+}
+
+/* Form Field Separation */
+#vehicleRegistrationForm div {
+    background: #f9f9f9;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Submit Button (Full Width) */
+#vehicleRegistrationForm button {
+    background: #ff6600;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-weight: bold;
+    grid-column: span 2;
+}
+
+#vehicleRegistrationForm button:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: scale(1.05);
+}
+
+/* Responsive Design: Single Column on Small Screens */
+@media (max-width: 768px) {
+    #vehicleRegistrationForm {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+
     }
 
-    .office {
-        padding: 15px; /* Adjust padding for small screens */
-    }
-
-    .office h3 {
-        font-size: 1.3em; /* Adjust heading size for small screens */
-    }
-
-    .office p {
-        font-size: 0.9em; /* Adjust paragraph size for small screens */
+    .full-width {
+        grid-column: span 1; /* Single column span */
     }
 }
+
+#contact {
+    width: 96%;
+    max-width: 900px;
+    height: auto; 
+    padding: 10px 20px; 
+    background: #072a51; 
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    margin: 50px auto; 
+}
+
+
+  
+ 
+  /* Contact Links */
+  #contact a {
+    color: skyblue;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  #contact a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
