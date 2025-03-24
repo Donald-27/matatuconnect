@@ -75,12 +75,12 @@ document.addEventListener("DOMContentLoaded", function () {
             vehicleType,
             vehicleNumber,
             seatingCapacity,
-            vehicleImage: vehicleImage.name, // Just storing filename for now
+            vehicleImage: vehicleImage.name,
         };
 
         console.log("Vehicle Registered:", vehicleData);
 
-        // Show success message (or send data to a backend)
+        // Show success message)
         alert("Submission was successful!We will let you know once we verify the details!");
 
         // Reset form after submission
