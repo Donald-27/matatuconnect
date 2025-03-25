@@ -82,8 +82,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Show success message)
         alert("Submission was successful!We will let you know once we verify the details!");
-
+// Reset form after submission
         // Reset form after submission
         form.reset();
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const gallery = document.querySelector(".image-gallery");
+    const items = document.querySelectorAll(".image-item");
+    let index = 0;
+
+    function showImage(i) {
+        gallery.style.transform = `translateX(-${i * 100}%)`;
+    }
+
+    function nextImage() {
+        index = (index + 1) % items.length; // Loop back to first image
+        showImage(index);
+    }
+
+    function prevImage() {
+        index = (index - 1 + items.length) % items.length; // Loop back to last image
+        showImage(index);
+    }
+
+    document.querySelector(".next-btn").addEventListener("click", nextImage);
+    document.querySelector(".prev-btn").addEventListener("click", prevImage);
+
+    // Auto-slide every 4 seconds
+    setInterval(nextImage, 4000);
+});
+
