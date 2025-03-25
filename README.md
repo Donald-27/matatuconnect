@@ -15,6 +15,7 @@ USAGE:
 .check available matatus and available destinations
 .submit  booking and receive confirmation 
 .print ticket
+. you can register your vehicle by filling the registration form
 
 
 LICENCE 
