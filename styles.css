@@ -1,3 +1,5 @@
+
+
 html{scroll-behavior: smooth;
 
 }
@@ -230,7 +232,8 @@ footer {
 
 /* Vehicle Registration Section */
 #register-vehicle {
-    max-width: 600px;
+   height: auto;
+    max-width: 100%;
     margin: 40px 0 40px auto;
     padding: 25px;
     background: #ffffff;
@@ -343,10 +346,104 @@ footer {
     border-radius: 10px;
     text-align: center;
     margin: 50px auto; 
+    
+}
+
+/* Tours and Trips Section */
+#tours-trips {
+    height: auto;
+    max-width: 100%;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    border: 2px solid #007bff;
+    transition: transform 0.3s ease-in-out;
+
+    margin-left: 0; /* Moves the form to the left */
+    margin-right: auto;
+    width: 50%; /* Adjust as needed */
+    
+    text-align: left; /* Aligns text inside to the left */
+}
+
+/* Form Title */
+#tours-trips h2 {
+    text-align: center;
+    color: #007bff;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Form Layout */
+#tours-tripsForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+    gap: 16px;
+    width: 100%;
+    align-items: center;
 }
 
 
-  
+/* Label Styling (Align Left) */
+#tours-tripsForm label {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+    text-align: left;
+    width: 100%;
+}
+
+/* Input Fields & Select Box */
+#tours-tripsForm input,
+#tours-tripsForm select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background: #f8f9fa;
+    outline: none;
+    text-align: right; /* Aligns placeholder to the right */
+}
+
+/* Placeholder Styling */
+#tours-tripsForm input::placeholder,
+#tours-tripsForm select::placeholder {
+    font-size: 12px;
+    color: #777;
+    text-align: right;
+}
+
+/* File Upload */
+#tours-tripsForm input[type="file"] {
+    border: none;
+    padding: 8px;
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
+/* Form Field Separation */
+#tours-tripsForm div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Submit Button */
+#tours-tripsForm button {
+    background: #ff6600;
+    color: white;
+   
+
+}
  
   /* Contact Links */
   #contact a {
@@ -362,8 +459,14 @@ footer {
 
 
   }
-  
+    
 
+
+
+
+
+
+  
   
   
                      /* styling on smaller screens */
@@ -425,6 +528,12 @@ footer {
         cursor: pointer;
     }
 }
+
+
+
+
+
+
 /* Responsive Navigation */
        
 @media (max-width: 800px) {

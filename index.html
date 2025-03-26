@@ -224,30 +224,78 @@
     </form>
 </section>
 
+
 <!-- Tours and Trips Section -->
-<section id="tours-trips">
-    <h2>Tours and Trips</h2>
-    <div class="nav-tabs">
-        <ul>
-            <li><a href="#kenya">Kenya</a></li>
-            <li><a href="#uganda">Uganda</a></li>
-            <li><a href="#tanzania">Tanzania</a></li>
-            <li><a href="#rwanda">Rwanda</a></li>
-            <li><a href="#south-africa">South-Africa</a></li>
-        </ul>
-    </div>
-    <div class="tab-content">
-        <div id="kenya" class="tab-pane">Kenya Tour Details...</div>
-        <div id="uganda" class="tab-pane">Uganda Tour Details...</div>
-        <div id="tanzania" class="tab-pane">Tanzania Tour Details...</div>
-        <div id="rwanda" class="tab-pane">Rwanda Tour Details...</div>
-        <div id="south-africa" class="tab-pane">South Africa Tour Details...</div>
-    </div>
-    
-</section>
+<div id="tours-trips">
+    <h2>Book Your Tour</h2>
+    <form id="tours-tripsForm">
 
+        <div>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
 
+        <div>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
 
+        <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div>
+            <label for="country">Select Country</label>
+            <select id="country" name="country" required>
+                <option value="">Choose a country</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="Uganda">Uganda</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="South Africa">South Africa</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="package">Tour Package</label>
+            <select id="package" name="package" required>
+                <option value="">Select a package</option>
+                <option value="Masai Mara">Kenya - Masai Mara</option>
+                <option value="Serengeti">Tanzania - Serengeti</option>
+                <option value="Queen Elizabeth">Uganda - Queen Elizabeth Park</option>
+                <option value="Volcanoes National Park">Rwanda - Volcanoes National Park</option>
+                <option value="Kruger National Park">South Africa - Kruger National Park</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="tour_date">Tour Date</label>
+            <input type="date" id="tour_date" name="tour_date" required>
+        </div>
+
+        <div>
+            <label for="travelers">Number of Travelers</label>
+            <input type="number" id="travelers" name="travelers" min="1" max="20" placeholder="Enter number of travelers" required>
+        </div>
+
+        <div>
+            <label for="vehicle">Preferred Vehicle</label>
+            <select id="vehicle" name="vehicle" required>
+                <option value="Tour Bus">Tour Bus</option>
+                <option value="Shuttle Van">Shuttle Van</option>
+                <option value="Private Car">Private Car</option>
+            </select>
+        </div>
+
+        <div class="full-width">
+            <label for="requests">Additional Requests</label>
+            <textarea id="requests" name="requests" rows="3" placeholder="Enter any additional requests..."></textarea>
+        </div>
+
+        <button type="submit">Book Tour</button>
+    </form>
+</div>
 
 
 
