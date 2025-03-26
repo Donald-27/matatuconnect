@@ -231,7 +231,7 @@ footer {
 /* Vehicle Registration Section */
 #register-vehicle {
     max-width: 600px;
-    margin: 40px auto;
+    margin: 40px 0 40px auto;
     padding: 25px;
     background: #ffffff;
     border-radius: 10px;
