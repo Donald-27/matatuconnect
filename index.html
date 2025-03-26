@@ -259,19 +259,41 @@
 
         <div>
             <label for="package">Tour Package</label>
+          
             <select id="package" name="package" required>
                 <option value="">Select a package</option>
-                <option value="Masai Mara">Kenya - Masai Mara</option>
-                <option value="Serengeti">Tanzania - Serengeti</option>
-                <option value="Queen Elizabeth">Uganda - Queen Elizabeth Park</option>
-                <option value="Volcanoes National Park">Rwanda - Volcanoes National Park</option>
-                <option value="Kruger National Park">South Africa - Kruger National Park</option>
+                <option value="Masai Mara" data-price="2000" data-date="08/09/2025">Kenya - Masai Mara</option>
+                <option value="Amboseli National Park" data-price="1000" data-date="08/09/2025">Kenya - Amboseli National Park</option>
+                <option value="Tsavo National Park" data-price="3000" data-date="08/09/2025">Kenya - Tsavo National Park</option>
+                <option value="Diani Beach" data-price="4700" data-date="08/09/2025">Kenya - Diani Beach</option>
+                <option value="Hell’s Gate National Park" data-price="7800" data-date="08/09/2025">Kenya - Hell's Gate National Park</option>
+                <option value="Serengeti" data-price="2300" data-date="08/09/2025">Tanzania - Serengeti</option>
+                <option value="Zanzibar" data-price="2500" data-date="08/09/2025">Tanzania - Zanzibar</option>
+                <option value="Mount Kilimanjaro" data-price="2800" data-date="08/09/2025">Tanzania - Mount Kilimanjaro</option>
+                <option value="Selous Game Reserve" data-price="3200" data-date="08/09/2025">Tanzania - Selous Game Reserve</option>
+                <option value="Mafia Island" data-price="2700" data-date="08/09/2025">Tanzania - Mafia Island</option>
+                <option value="Ruaha National Park" data-price="2900" data-date="08/09/2025">Tanzania - Ruaha National Park</option>
+                <option value="Queen Elizabeth National Park" data-price="2200" data-date="08/09/2025">Uganda - Queen Elizabeth National Park</option>
+                <option value="Murchison Falls National Park" data-price="2600" data-date="08/09/2025">Uganda - Murchison Falls National Park</option>
+                <option value="Rwenzori Mountain" data-price="3100" data-date="08/09/2025">Uganda - Rwenzori Mountain</option>
+                <option value="Jinja Nile" data-price="2400" data-date="08/09/2025">Uganda - Jinja Nile</option>
+                <option value="Volcanoes National Park" data-price="3500" data-date="08/09/2025">Rwanda - Volcanoes National Park</option>
+                <option value="Lake Kivu" data-price="2800" data-date="08/09/2025">Rwanda - Lake Kivu</option>
+                <option value="Kigali Genocide Memorial" data-price="1800" data-date="08/09/2025">Rwanda - Kigali Genocide Memorial</option>
+                <option value="Kruger National Park" data-price="3900" data-date="08/09/2025">South Africa - Kruger National Park</option>
+                <option value="Table Mountain" data-price="4200" data-date="08/09/2025">South Africa - Table Mountain</option>
+                <option value="Robben Island" data-price="2500" data-date="08/09/2025">South Africa - Robben Island</option>
+                <option value="Victoria & Alfred Waterfront" data-price="2900" data-date="08/09/2025">South Africa - Victoria & Alfred Waterfront</option>
+                <option value="Cape Winelands" data-price="3400" data-date="08/09/2025">South Africa - Cape Winelands</option>
+                <option value="Addo Elephant National Park" data-price="3200" data-date="08/09/2025">South Africa - Addo Elephant National Park</option>
             </select>
+            
+
         </div>
 
         <div>
-            <label for="tour_date">Tour Date</label>
-            <input type="date" id="tour_date" name="tour_date" required>
+            <label for="tourDate">Tour Date</label>
+            <input type="text" id="tourDate" name="tourDate" readonly>
         </div>
 
         <div>
@@ -289,8 +311,10 @@
         </div>
 
         <div class="full-width">
-            <label for="requests">Additional Requests</label>
-            <textarea id="requests" name="requests" rows="3" placeholder="Enter any additional requests..."></textarea>
+            <label for="price">Price (Ksh)</label>
+<input type="text" id="price" name="price" readonly>
+
+
         </div>
 
         <button type="submit">Book Tour</button>

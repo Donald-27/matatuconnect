@@ -362,9 +362,9 @@ footer {
 
     margin-left: 0; /* Moves the form to the left */
     margin-right: auto;
-    width: 50%; /* Adjust as needed */
+    width: 50%; 
     
-    text-align: left; /* Aligns text inside to the left */
+    text-align: left; 
 }
 
 /* Form Title */
@@ -405,7 +405,7 @@ footer {
     border-radius: 6px;
     background: #f8f9fa;
     outline: none;
-    text-align: right; /* Aligns placeholder to the right */
+    text-align: right; /* Aligns placeholder names to the right */
 }
 
 /* Placeholder Styling */
@@ -468,8 +468,13 @@ footer {
 
   
   
-  
                      /* styling on smaller screens */
+
+
+
+
+
+
 
 @media (max-width: 768px) {
     #vehicleRegistrationForm {
@@ -528,7 +533,17 @@ footer {
         cursor: pointer;
     }
 }
+@media screen and (max-width: 768px) {
+    #tours-trips {
+        width: 90%; 
+        margin-left: auto;
+        margin-right: auto;
+    }
 
+    #tours-tripsForm {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+}
 
 
 

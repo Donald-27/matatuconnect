@@ -114,3 +114,30 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(nextImage, 4000);
 });
 
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const packageSelect = document.getElementById("package");
+    const tourDateInput = document.getElementById("tourDate");
+    const priceInput = document.getElementById("price");
+
+    packageSelect.addEventListener("change", function () {
+        let selectedOption = packageSelect.options[packageSelect.selectedIndex];
+
+        let tourDate = selectedOption.getAttribute("data-date");
+        let price = selectedOption.getAttribute("data-price");
+
+        if (tourDate) {
+            tourDateInput.value = tourDate;
+        } else {
+            tourDateInput.value = "";
+        }
+
+        if (price) {
+            priceInput.value = `Ksh ${price}`;
+        } else {
+            priceInput.value = "";
+        }
+    });
+});
