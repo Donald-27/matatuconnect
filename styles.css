@@ -99,7 +99,7 @@ h1 {
 
 /* Header section hover*/
 .header-nav ul li a:hover {
-    background: #043263;
+    background: #ff6600;
     color: white;
     border: 1px solid white;
     transform: scale(1.1);
@@ -137,7 +137,7 @@ h1 {
     transition: background-color 0.5s ease-in-out;
 }
 .booking-container:hover {
-    background-color: #ffcc99; 
+    background-color: #ff6600; 
 }
 
 /* Booking Form */
@@ -441,9 +441,25 @@ footer {
 #tours-tripsForm button {
     background: #ff6600;
     color: white;
-   
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-weight: bold;
+    grid-column: span 2
 
 }
+
+
+#tours-tripsForm button:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: scale(1.05);
+}
+
+
+
  
   /* Contact Links */
   #contact a {
