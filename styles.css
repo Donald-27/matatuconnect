@@ -228,6 +228,13 @@ footer {
     border-radius: 10px;
     text-align: center;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); 
+    
+}
+.office:hover {
+    
+
+    transform: scale(1.05);
+    transition: transform 0.2s;
 }
 
 /* Vehicle Registration Section */

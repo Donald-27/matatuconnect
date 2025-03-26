@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+//autofill tour date and price
 document.addEventListener("DOMContentLoaded", function () {
     const packageSelect = document.getElementById("package");
     const tourDateInput = document.getElementById("tourDate");
