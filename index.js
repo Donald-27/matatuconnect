@@ -94,7 +94,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    //sat booking section
+    //seat booking section
+
+
+
     document.addEventListener("DOMContentLoaded", function () {
         // Get references to form elements
         const fromSelect = document.getElementById("from");
@@ -314,4 +317,116 @@ function updateSeatDropdown() {
         }
     });
 }
+
+
+
+
+
+
+const images = [
+    { name: "Masai Mara", url: "https://via.placeholder.com/600x400?text=Masai+Mara", lat: -1.4061, lon: 35.0081 },
+    { name: "Amboseli National Park", url: "https://via.placeholder.com/600x400?text=Amboseli+National+Park", lat: -2.645, lon: 37.2605 },
+    { name: "Tsavo National Park", url: "https://via.placeholder.com/600x400?text=Tsavo+National+Park", lat: -3.1006, lon: 38.4853 },
+    { name: "Diani Beach", url: "https://via.placeholder.com/600x400?text=Diani+Beach", lat: -4.2803, lon: 39.5943 },
+    { name: "Hell's Gate National Park", url: "https://via.placeholder.com/600x400?text=Hells+Gate+National+Park", lat: -0.8813, lon: 36.3754 },
+    { name: "Serengeti", url: "https://via.placeholder.com/600x400?text=Serengeti", lat: -2.3333, lon: 34.8333 },
+    { name: "Zanzibar", url: "https://via.placeholder.com/600x400?text=Zanzibar", lat: -6.1659, lon: 39.2026 },
+    { name: "Mount Kilimanjaro", url: "https://via.placeholder.com/600x400?text=Mount+Kilimanjaro", lat: -3.0758, lon: 37.3533 },
+    { name: "Selous Game Reserve", url: "https://via.placeholder.com/600x400?text=Selous+Game+Reserve", lat: -9.0004, lon: 37.417 },
+    { name: "Mafia Island", url: "https://via.placeholder.com/600x400?text=Mafia+Island", lat: -7.8274, lon: 39.7304 },
+    { name: "Ruaha National Park", url: "https://via.placeholder.com/600x400?text=Ruaha+National+Park", lat: -7.5, lon: 34.5 },
+    { name: "Queen Elizabeth National Park", url: "https://via.placeholder.com/600x400?text=Queen+Elizabeth+National+Park", lat: 0.2093, lon: 30.0062 },
+    { name: "Murchison Falls National Park", url: "https://via.placeholder.com/600x400?text=Murchison+Falls+National+Park", lat: 2.2604, lon: 31.8122 },
+    { name: "Rwenzori Mountain", url: "https://via.placeholder.com/600x400?text=Rwenzori+Mountain", lat: 0.3992, lon: 29.8794 },
+    { name: "Jinja Nile", url: "https://via.placeholder.com/600x400?text=Jinja+Nile", lat: 0.439, lon: 33.2032 },
+    { name: "Volcanoes National Park", url: "https://via.placeholder.com/600x400?text=Volcanoes+National+Park", lat: -1.4839, lon: 29.5564 },
+    { name: "Lake Kivu", url: "https://via.placeholder.com/600x400?text=Lake+Kivu", lat: -2.154, lon: 29.2772 },
+    { name: "Kigali Genocide Memorial", url: "https://via.placeholder.com/600x400?text=Kigali+Genocide+Memorial", lat: -1.9441, lon: 30.0619 },
+    { name: "Kruger National Park", url: "https://via.placeholder.com/600x400?text=Kruger+National+Park", lat: -23.9884, lon: 31.5547 },
+    { name: "Table Mountain", url: "https://via.placeholder.com/600x400?text=Table+Mountain", lat: -33.9628, lon: 18.4098 }
+];
+
+const carousel = document.querySelector(".carousel");
+const totalImages = images.length;
+let currentIndex = 0;
+
+// Insert images dynamically with weather info containers
+images.forEach(img => {
+    const item = document.createElement("div");
+    item.classList.add("carousel-item");
+
+    const imgElement = document.createElement("img");
+    imgElement.src = img.url;
+    imgElement.alt = img.name;
+
+    const weatherInfo = document.createElement("div");
+    weatherInfo.classList.add("weather-info");
+    weatherInfo.innerHTML = `<h2>${img.name}</h2><p id="temp-${img.name}">Loading...</p>`;
+
+    item.appendChild(imgElement);
+    item.appendChild(weatherInfo);
+    carousel.appendChild(item);
+
+    // Fetch weather for each image
+    fetchWeather(img, `temp-${img.name}`);
+});
+
+// Function to fetch and update weather
+async function fetchWeather(location, elementId) {
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&longitude=${location.lon}&current_weather=true`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        document.getElementById(elementId).textContent = `Temperature: ${data.current_weather.temperature}°C`;
+    } catch (error) {
+        document.getElementById(elementId).textContent = "Weather data not available";
+    }
+}
+
+// Images and smooth scrolling effect
+function smoothScroll() {
+    let translateX = -(currentIndex * window.innerWidth);
+    carousel.style.transform = `translateX(${translateX}px)`;
+    carousel.style.transition = `transform 2s ease-in-out`; // Smooth transition of th e images
+
+    currentIndex++;
+
+    if (currentIndex >= totalImages) {
+        setTimeout(() => {
+            carousel.style.transition = "none"; 
+            carousel.style.transform = "translateX(0)";
+            currentIndex = 0;
+        }, 2000); 
+    }
+}
+
+// moves images every 4 seconds
+setInterval(smoothScroll, 4000);
+
+
+const weatherInfoElements = document.querySelectorAll(".weather-info");
+
+async function fetchWeather(location, index) {
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&longitude=${location.lon}&current_weather=true`;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Failed to fetch weather data");
+        const data = await response.json();
+        weatherInfoElements[index].innerHTML = `
+            <h2>${location.name}</h2>
+            <p>Temperature: ${data.current_weather.temperature}°C</p>
+        `;
+    } catch (error) {
+        weatherInfoElements[index].innerHTML = `<h2>${location.name}</h2><p>Weather data not available</p>`;
+    }
+}
+
+// Fetch weather for the locations
+images.forEach((img, index) => fetchWeather(img, index));
+
+
+
+
+
+
 
