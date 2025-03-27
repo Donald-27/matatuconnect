@@ -303,26 +303,28 @@ booking.route === selectedRoute    );
 //image carousel section
 
 const images = [
- { name: "Masai Mara", url: "https://via.placeholder.com/600x400?text=Masai+Mara", lat: -1.4061, lon: 35.0081 },
- { name: "Amboseli National Park", url: "https://via.placeholder.com/600x400?text=Amboseli+National+Park", lat: -2.645, lon: 37.2605 },
-  { name: "Tsavo National Park", url: "https://via.placeholder.com/600x400?text=Tsavo+National+Park", lat: -3.1006, lon: 38.4853 },
-  { name: "Diani Beach", url: "https://via.placeholder.com/600x400?text=Diani+Beach", lat: -4.2803, lon: 39.5943 },
- { name: "Hell's Gate National Park", url: "https://via.placeholder.com/600x400?text=Hells+Gate+National+Park", lat: -0.8813, lon: 36.3754 },
-{ name: "Serengeti", url: "https://via.placeholder.com/600x400?text=Serengeti", lat: -2.3333, lon: 34.8333 },
- { name: "Zanzibar", url: "https://via.placeholder.com/600x400?text=Zanzibar", lat: -6.1659, lon: 39.2026 },
-{ name: "Mount Kilimanjaro", url: "https://via.placeholder.com/600x400?text=Mount+Kilimanjaro", lat: -3.0758, lon: 37.3533 },
-{ name: "Selous Game Reserve", url: "https://via.placeholder.com/600x400?text=Selous+Game+Reserve", lat: -9.0004, lon: 37.417 },
-{ name: "Mafia Island", url: "https://via.placeholder.com/600x400?text=Mafia+Island", lat: -7.8274, lon: 39.7304 },
-{ name: "Ruaha National Park", url: "https://via.placeholder.com/600x400?text=Ruaha+National+Park", lat: -7.5, lon: 34.5 },
-{ name: "Queen Elizabeth National Park", url: "https://via.placeholder.com/600x400?text=Queen+Elizabeth+National+Park", lat: 0.2093, lon: 30.0062 },
-{ name: "Murchison Falls National Park", url: "https://via.placeholder.com/600x400?text=Murchison+Falls+National+Park", lat: 2.2604, lon: 31.8122 },
-{ name: "Rwenzori Mountain", url: "https://via.placeholder.com/600x400?text=Rwenzori+Mountain", lat: 0.3992, lon: 29.8794 },
-{ name: "Jinja Nile", url: "https://via.placeholder.com/600x400?text=Jinja+Nile", lat: 0.439, lon: 33.2032 },
-{ name: "Volcanoes National Park", url: "https://via.placeholder.com/600x400?text=Volcanoes+National+Park", lat: -1.4839, lon: 29.5564 },
-{ name: "Lake Kivu", url: "https://via.placeholder.com/600x400?text=Lake+Kivu", lat: -2.154, lon: 29.2772 },
-{ name: "Kigali Genocide Memorial", url: "https://via.placeholder.com/600x400?text=Kigali+Genocide+Memorial", lat: -1.9441, lon: 30.0619 },
-{ name: "Kruger National Park", url: "https://via.placeholder.com/600x400?text=Kruger+National+Park", lat: -23.9884, lon: 31.5547 },
-{ name: "Table Mountain", url: "https://via.placeholder.com/600x400?text=Table+Mountain", lat: -33.9628, lon: 18.4098 }
+ { name: "Masai Mara", url: "mara.jpg", lat: -1.4061, lon: 35.0081 },
+ { name: "Amboseli National Park", url: "amboseli.jpg", lat: -2.645, lon: 37.2605 },
+  { name: "Tsavo National Park", url: "tsavo.jpg", lat: -3.1006, lon: 38.4853 },
+  { name: "Diani Beach", url: "diani.jpg", lat: -4.2803, lon: 39.5943 },
+ { name: "Hell's Gate National Park", url: "hellsgate.jpg", lat: -0.8813, lon: 36.3754 },
+{ name: "Serengeti", url: "serengeti.jpg", lat: -2.3333, lon: 34.8333 },
+ { name: "Zanzibar", url: "zanzibarbeach.jpg", lat: -6.1659, lon: 39.2026 },
+{ name: "Mount Kilimanjaro", url: "kilimanjaro.jpg", lat: -3.0758, lon: 37.3533 },
+{ name: "Selous Game Reserve", url: "selous.jpg", lat: -9.0004, lon: 37.417 },
+{ name: "Mafia Island", url: "mafia.jpg", lat: -7.8274, lon: 39.7304 },
+{ name: "Ruaha National Park", url: "downloadd.jpg", lat: -7.5, lon: 34.5 },
+{ name: "Queen Elizabeth National Park", url: "queenelizabethpark.jpg", lat: 0.2093, lon: 30.0062 },
+{ name: "Murchison Falls National Park", url: "murchison.jpg", lat: 2.2604, lon: 31.8122 },
+{ name: "Rwenzori Mountain", url: "ugmountain.jpg", lat: 0.3992, lon: 29.8794 },
+{ name: "Jinja Nile", url: "nile.jpg", lat: 0.439, lon: 33.2032 },
+{ name: "Volcanoes National Park", url: "ngorongorocrater.jpg", lat: -1.4839, lon: 29.5564 },
+{ name: "Lake Kivu", url: "kivu.jpg", lat: -2.154, lon: 29.2772 },
+{ name: "Kigali Genocide Memorial", url: "kigaligenocide.jpg", lat: -1.9441, lon: 30.0619 },
+{ name: "Kruger National Park", url: "krugersa.jpg", lat: -23.9884, lon: 31.5547 },
+{ name: "Cape Point", url: "capesa.jpg", lat: -33.9628, lon: 18.4098 },
+{ name: "Table Mountain", url: "tablemt.jpg", lat: -33.9628, lon: 18.4098 },
+{ name: "Karoo & Namaqualand", url: "Namaqualand.jpg", lat: -33.9628, lon: 18.4098 },
 ];
 const carousel = document.querySelector(".carousel");
 let currentIndex = 0;
@@ -360,7 +362,7 @@ const url = `https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&lon
     const tempElement = document.getElementById(elementId);
    if (tempElement) {
  tempElement.innerHTML = `<h2>${location.name}</h2>
- <p>Temperature: ${data.current_weather.temperature}°C</p`;
+ <p>Temperature: ${data.current_weather.temperature}°C</p>`;
  }
 })
  .catch(error => {
