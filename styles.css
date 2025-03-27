@@ -211,7 +211,7 @@ input[type="date"] {
 .carousel-item {
     position: relative; /* Allows positioning of weather info */
     width: 100vw;
-    height: 100vh;
+    height: 60vh;
     scroll-snap-align: start;
 }
 
