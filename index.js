@@ -318,7 +318,7 @@ const images = [
 { name: "Murchison Falls National Park", url: "murchison.jpg", lat: 2.2604, lon: 31.8122 },
 { name: "Rwenzori Mountain", url: "ugmountain.jpg", lat: 0.3992, lon: 29.8794 },
 { name: "Jinja Nile", url: "nile.jpg", lat: 0.439, lon: 33.2032 },
-{ name: "Volcanoes National Park", url: "ngorongorocrater.jpg", lat: -1.4839, lon: 29.5564 },
+{ name: "Volcanoes National Park", url: "ngorongorocrater_.jpg", lat: -1.4839, lon: 29.5564 },
 { name: "Lake Kivu", url: "kivu.jpg", lat: -2.154, lon: 29.2772 },
 { name: "Kigali Genocide Memorial", url: "kigaligenocide.jpg", lat: -1.9441, lon: 30.0619 },
 { name: "Kruger National Park", url: "krugersa.jpg", lat: -23.9884, lon: 31.5547 },
@@ -361,7 +361,7 @@ const url = `https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&lon
    .then(data => {
     const tempElement = document.getElementById(elementId);
    if (tempElement) {
- tempElement.innerHTML = `<h2>${location.name}</h2>
+ tempElement.innerHTML = `<h4>${location.name}</h4>
  <p>Temperature: ${data.current_weather.temperature}°C</p>`;
  }
 })
