@@ -82,62 +82,236 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Show success message)
         alert("Submission was successful!We will let you know once we verify the details!");
-// Reset form after submission
-        // Reset form after submission
-        form.reset();
+
+        
+        form.reset();// Reset form after submission
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const gallery = document.querySelector(".image-gallery");
-    const items = document.querySelectorAll(".image-item");
-    let index = 0;
-
-    function showImage(i) {
-        gallery.style.transform = `translateX(-${i * 100}%)`;
-    }
-
-    function nextImage() {
-        index = (index + 1) % items.length; // Loop back to first image
-        showImage(index);
-    }
-
-    function prevImage() {
-        index = (index - 1 + items.length) % items.length; // Loop back to last image
-        showImage(index);
-    }
-
-    document.querySelector(".next-btn").addEventListener("click", nextImage);
-    document.querySelector(".prev-btn").addEventListener("click", prevImage);
-
-    // Auto-slide every 4 seconds
-    setInterval(nextImage, 4000);
-});
 
 
 
-//autofill tour date and price
-document.addEventListener("DOMContentLoaded", function () {
-    const packageSelect = document.getElementById("package");
-    const tourDateInput = document.getElementById("tourDate");
-    const priceInput = document.getElementById("price");
 
-    packageSelect.addEventListener("change", function () {
-        let selectedOption = packageSelect.options[packageSelect.selectedIndex];
 
-        let tourDate = selectedOption.getAttribute("data-date");
-        let price = selectedOption.getAttribute("data-price");
 
-        if (tourDate) {
-            tourDateInput.value = tourDate;
-        } else {
-            tourDateInput.value = "";
+    //sat booking section
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get references to form elements
+        const fromSelect = document.getElementById("from");
+        const toSelect = document.getElementById("to");
+        const priceField = document.getElementById("price");
+        const seatSelection = document.getElementById("seat-selection");
+        const confirmButton = document.getElementById("confirm-booking");
+        const bookingMessage = document.getElementById("booking-message");
+        const departureTime = document.getElementById("departure-time");
+        const departureDate = document.getElementById("departure-date");
+        const bookingForm = document.getElementById("bookingForm");
+    
+        // Define prices for different routes
+        const priceMap = {
+            "Eldoret-Nakuru": 500, "Eldoret-Nairobi": 700,
+            "Nairobi-Mombasa": 1000, "Mombasa-Garissa": 900,
+            "Naivasha-Mombasa": 1500, "Nakuru-Kitale": 800,
+            "Mombasa-Kisumu": 1200, "Kisumu-Naivasha": 1100,
+            "Nairobi-Eldoret": 1200, "Eldoret-Kitale": 1100,
+            "Meru-Thika": 1000, "Eldoret-Iten": 100,
+            "Iten-Kabarnet": 450, "Nairobi-Nakuru": 500,
+            "Eldoret-Iten": 500, "Eldoret-Mombasa": 2800,
+            "Garissa-Kilifi": 900, "Kilifi-Mombasa": 1100,
+            "Nakuru-Thika": 500, "Thika-Naivasha": 400,
+            "Meru-Nairobi": 1200, "Eldoret-Meru": 1500,
+            "Naivasha-Nairobi": 450, "Kitale-Nairobi": 1500,
+
+        };
+        
+    
+        let seatData = []; // To store seat information
+    
+        function calculatePrice() {
+            let routeKey = fromSelect.value + "-" + toSelect.value;
+            if (priceMap[routeKey]) {
+                priceField.value = "Ksh " + priceMap[routeKey];
+            } else {
+                priceField.value = "Select valid routes";
+            }
         }
+    
+        function fetchSeats() {
+            fetch("http://localhost:3000/seats")
+                .then(response => response.json())
+                .then(data => {
+                    seatData = data;
+                    updateSeatDropdown();
+                })
+                .catch(error => console.error("Error fetching seat data:", error));
+        }
+    
+        function updateSeatDropdown() {
+            seatSelection.innerHTML = '<option value="" disabled selected>Select Seat</option>';
+            let selectedDate = departureDate.value;
+            let selectedTime = departureTime.value;
+            let selectedRoute = fromSelect.value + "-" + toSelect.value;
+            seatData.forEach(seat => {
+                let isBooked = seat.bookings?.some(booking => 
+                    booking.date === selectedDate && 
+                    booking.time === selectedTime && 
+                    booking.route === selectedRoute);
+                if (!isBooked) {
+                    let option = document.createElement("option");
+                    option.value = seat.id;
+                    option.textContent = seat.id;
+                    seatSelection.appendChild(option);
+                }
+            });
+        }
+        function updateSeatDropdown() {
+    seatSelection.innerHTML = '<option value="" disabled selected>Select Seat</option>';
+    let selectedDate = departureDate.value;
+    let selectedTime = departureTime.value;
+    let selectedRoute = fromSelect.value + "-" + toSelect.value;
 
-        if (price) {
-            priceInput.value = `Ksh ${price}`;
-        } else {
-            priceInput.value = "";
+    seatData.forEach(seat => {
+        let isBooked = seat.bookings?.some(booking => 
+            booking.date === selectedDate &&
+            booking.time === selectedTime &&
+            booking.route === selectedRoute
+        );
+
+        if (!isBooked) {
+            let option = document.createElement("option");
+            option.value = seat.id;
+            option.textContent = seat.id;
+            seatSelection.appendChild(option);
         }
     });
-});
+}
+
+    
+        bookingForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            let selectedSeat = seatSelection.value;
+            let selectedTime = departureTime.value;
+            let selectedDate = departureDate.value;
+            let selectedRoute = fromSelect.value + "-" + toSelect.value;
+            
+            if (!selectedSeat || !selectedTime || !selectedDate) {
+                bookingMessage.textContent = "Please select a seat, departure date, and departure time.";
+                bookingMessage.style.color = "red";
+                return;
+            }
+            
+            if (priceField.value === "Select valid routes") {
+                bookingMessage.textContent = "Error: Select valid routes before booking.";
+                bookingMessage.style.color = "red";
+                return;
+            }
+            
+            let seatToUpdate = seatData.find(seat => seat.id === selectedSeat);
+            if (seatToUpdate) {
+                seatToUpdate.bookings = seatToUpdate.bookings || [];
+                let alreadyBooked = seatToUpdate.bookings.some(booking => 
+                    booking.date === selectedDate && 
+                    booking.time === selectedTime && 
+                    booking.route === selectedRoute);
+                
+                if (alreadyBooked) {
+                    bookingMessage.textContent = `Error: Seat ${selectedSeat} is already booked for ${selectedRoute} on ${selectedDate} at ${selectedTime}.`;
+                    bookingMessage.style.color = "red";
+                    return;
+                }
+                
+                seatToUpdate.bookings.push({ date: selectedDate, time: selectedTime, route: selectedRoute });
+                fetch(`http://localhost:3000/seats/${seatToUpdate.id}`, {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ bookings: seatToUpdate.bookings })
+                })
+                .then(() => {
+                    bookingMessage.textContent = `Seat ${selectedSeat} booked successfully for ${selectedRoute} on ${selectedDate} at ${selectedTime}!`;
+                    bookingMessage.style.color = "green";
+                    fetchSeats();
+                    bookingForm.reset(); // Auto-refresh the form
+                })
+                .catch(error => console.error("Error updating seat:", error));
+            }
+        });
+    
+        fromSelect.addEventListener("change", calculatePrice);
+        toSelect.addEventListener("change", calculatePrice);
+        departureTime.addEventListener("change", updateSeatDropdown);
+        departureDate.addEventListener("change", updateSeatDropdown);
+        fetchSeats();
+    });
+
+
+
+
+
+
+
+
+    // Define prices for different routes
+const priceMap = {
+    "Eldoret-Nakuru": 500, "Eldoret-Nairobi": 700,
+    "Nairobi-Mombasa": 1000, "Mombasa-Garissa": 900,
+    "Naivasha-Mombasa": 1500, "Nakuru-Kitale": 800,
+    "Mombasa-Kisumu": 1200, "Kisumu-Naivasha": 1100,
+    "Nairobi-Eldoret": 1200, "Eldoret-Kitale": 1100,
+    "Meru-Thika": 1000, "Eldoret-Iten": 100,
+    "Iten-Kabarnet": 450, "Nairobi-Nakuru": 500,
+    "Eldoret-Mombasa": 2800, "Garissa-Kilifi": 900,
+    "Kilifi-Mombasa": 1100, "Nakuru-Thika": 500,
+    "Thika-Naivasha": 400, "Meru-Nairobi": 1200,
+    "Eldoret-Meru": 1500, "Naivasha-Nairobi": 450,
+    "Kitale-Nairobi": 1500
+};
+
+let seatData = []; // To store seat information
+
+
+
+
+
+
+
+
+// Calculate and update price based on selected route
+function calculatePrice() {
+    let routeKey = fromSelect.value + "-" + toSelect.value;
+    priceField.value = priceMap[routeKey] ? "Ksh " + priceMap[routeKey] : "Select valid routes";
+}
+
+// Fetch seat data from JSON server
+function fetchSeats() {
+    fetch("http://localhost:3000/seats")
+        .then(response => response.json())
+        .then(data => {
+            seatData = data;
+            updateSeatDropdown();
+        })
+        .catch(error => console.error("Error fetching seat data:", error));
+}
+
+// Update seat dropdown based on route, date, and time
+function updateSeatDropdown() {
+    seatSelection.innerHTML = '<option value="" disabled selected>Select Seat</option>';
+    let selectedDate = departureDate.value;
+    let selectedTime = departureTime.value;
+    let selectedRoute = fromSelect.value + "-" + toSelect.value;
+
+    seatData.forEach(seat => {
+        let isBooked = seat.bookings?.some(booking =>
+            booking.date === selectedDate &&
+            booking.time === selectedTime &&
+            booking.route === selectedRoute
+        );
+
+        if (!isBooked) {
+            let option = document.createElement("option");
+            option.value = seat.id;
+            option.textContent = seat.id;
+            seatSelection.appendChild(option);
+        }
+    });
+}
+

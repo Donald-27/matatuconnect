@@ -31,73 +31,128 @@
         </nav>
         
     </header>
+   
+
     <section class="booking-form">
-        <form id="bookingForm">
-            
+        <h2>Book Your Matatu Ride</h2>
         <form id="bookingForm">
             <!-- Full Name -->
             <input type="text" id="Name" name="Name" placeholder="Name" required>
-        
+
             <!-- Phone Number -->
             <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required pattern="[0-9]{10}" title="Enter a valid 10-digit phone number">
-        
-            <!-- From-->
+
+            <!-- From -->
             <select id="from" name="from" required>
                 <option value="" disabled selected>From</option>
                 <option value="Eldoret">Eldoret</option>
-                <option value="Mombasa">Mombasa</option>
-                <option value="Kisumu">Kisumu</option>
-                <option value="Naivasha">Naivasha</option>
-                <option value="Nakuru">Nakuru</option>
-            </select>
-        
-
-
-
-<!-- TO -->
-
-            <select id="to" name="to" required>
-                <option value="" disabled selected>To</option>
-                <option value="Eldoret">Eldoret</option>
+                <option value="Nairobi">Nairobi</option>
                 <option value="Mombasa">Mombasa</option>
                 <option value="Kisumu">Kisumu</option>
                 <option value="Naivasha">Naivasha</option>
                 <option value="Nakuru">Nakuru</option>
                 <option value="Garissa">Garissa</option>
+                <option value="Meru">Meru</option>
+                <option value="Thika">Thika</option>
+                <option value="Kitale">Kitale</option>
+                <option value="Kilifi">Kilifi</option>
+                <option value="Iten">Iten</option>
+                <option value="Kabarnet">Kabarnet</option>
             </select>
-        
-            <!-- Seats-->
-            <select id="seats" name="seats" required>
-                <option value="" disabled selected>Select Seat</option>
-        
-                <option value="2">Seat 2</option>
-                <option value="3">Seat 3</option>
-                <option value="4">Seat 4</option>
-                <option value="5">Seat 5</option>
-                <option value="6">Seat 6</option>
-                <option value="7">Seat 7</option>
-                <option value="8">Seat 8</option>
-                <option value="9">Seat 9</option>
-                <option value="10">Seat 10</option>
-                <option value="11">Seat 11</option>
-                <option value="12">Seat 12</option>
-                <option value="13">Seat 13</option>
-                <option value="14">Seat 14</option>
+
+            <!-- To -->
+            <select id="to" name="to" required>
+                <option value="" disabled selected>To</option>
+                <option value="Eldoret">Eldoret</option>
+                <option value="Nairobi">Nairobi</option>
+                <option value="Mombasa">Mombasa</option>
+                <option value="Kisumu">Kisumu</option>
+                <option value="Naivasha">Naivasha</option>
+                <option value="Nakuru">Nakuru</option>
+                <option value="Garissa">Garissa</option>
+                <option value="Meru">Meru</option>
+                <option value="Thika">Thika</option>
+                <option value="Kitale">Kitale</option>
+                <option value="Kilifi">Kilifi</option>
+                <option value="Iten">Iten</option>
+                <option value="Kabarnet">Kabarnet</option>
             </select>
-        
-            <!-- Departure Date-calendar -->
+
+            <!-- Price -->
+            <input type="text" id="price" name="price" readonly placeholder="Price" required>
+
+            
+           
+            
+            <!-- Departure Date -->
             <input type="date" id="departure-date" name="departure-date" required>
-        
+
             <!-- Departure Time -->
-            <input type="time" id="departure-time" name="departure-time" required>
-        
-            <!-- Luggage Details -->
-            <textarea id="luggage" name="luggage" placeholder="Luggage (if any)"></textarea>
-        
-            <!-- Submit Button -->
-            <button type="submit">Book Now</button>
-        </form>
-        
+            <select id="departure-time" name="departure-time" required>
+           
+                <option value="07:00">7 AM</option>
+                <option value="09:00">9 AM</option>
+                <option value="10:00">10 AM</option>
+                <option value="13:00">1 PM</option>
+                <option value="15:00">3 PM</option>
+                <option value="17:00">5 PM</option>
+                <option value="21:00">9 PM</option>
+                <option value="23:00">11 PM</option>
+            </select>
+
+
+            <body>
+               
+            
+                <form id="bookingForm">
+                    <div class="seat-dropdown">
+                        <select id="seat-selection" name="seats" required>
+                            <option value="" disabled selected>Select Seat</option>
+                            <option value="Seat2">Seat 2</option>
+                            <option value="Seat3">Seat 3</option>
+                            <option value="Seat4">Seat 4</option>
+                            <option value="Seat5">Seat 5</option>
+                            <option value="Seat6">Seat 6</option>
+                            <option value="Seat7">Seat 7</option>
+                            <option value="Seat8">Seat 8</option>
+                            <option value="Seat9">Seat 9</option>
+                            <option value="Seat10">Seat 10</option>
+                            <option value="Seat11">Seat 11</option>
+                            <option value="Seat12">Seat 12</option>
+                            <option value="Seat13">Seat 13</option>
+                            <option value="Seat14">Seat 14</option>
+                        </select>
+                    </div>
+            
+                    <!-- Submit Button -->
+                    <button id="confirm-booking">Book Now</button>
+
+
+                     <!-- after booking message-->
+               
+<div id="booking-message"></div>
+
+                </form>
+            
+              
+           
+            
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
     </section>
     <br><br> 
     <!-- About Us Section -->

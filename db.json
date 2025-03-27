@@ -1,0 +1,254 @@
+{
+  "seats": [
+    {
+      "id": "Seat2",
+      "available": false,
+      "bookings": [
+        {
+          "date": "2025-03-05",
+          "time": "07:00"
+        },
+        {
+          "date": "2025-03-06",
+          "time": "07:00"
+        },
+        {
+          "date": "2025-02-25",
+          "time": "07:00"
+        },
+        {
+          "date": "2025-03-11",
+          "time": "07:00",
+          "route": "Eldoret-Naivasha"
+        },
+        {
+          "date": "2025-03-28",
+          "time": "07:00",
+          "route": "Eldoret-Nairobi"
+        },
+        {
+          "date": "2025-03-27",
+          "time": "07:00",
+          "route": "Eldoret-Nairobi"
+        },
+        {
+          "date": "2025-03-28",
+          "time": "07:00",
+          "route": "Eldoret-Mombasa"
+        }
+      ]
+    },
+    {
+      "id": "Seat3",
+      "available": false,
+      "bookings": [
+        {
+          "date": "2025-03-06",
+          "time": "07:00"
+        },
+        {
+          "date": "2025-03-28",
+          "time": "07:00",
+          "route": "Eldoret-Nairobi"
+        }
+      ]
+    },
+    {
+      "id": "Seat4",
+      "available": false,
+      "bookings": [
+        {
+          "date": "2025-03-11",
+          "time": "07:00",
+          "route": "Eldoret-Garissa"
+        }
+      ]
+    },
+    {
+      "id": "Seat5",
+      "available": false,
+      "bookings": [
+        {
+          "date": "2025-03-27",
+          "time": "07:00",
+          "route": "Eldoret-Nairobi"
+        },
+        {
+          "date": "2025-03-27",
+          "time": "07:00",
+          "route": "Eldoret-Kitale"
+        }
+      ]
+    },
+    {
+      "id": "Seat6",
+      "available": false,
+      "bookings": [
+        {
+          "date": "2025-03-06",
+          "time": "07:00",
+          "route": "Nakuru-Eldoret"
+        }
+      ]
+    },
+    {
+      "id": "Seat7",
+      "available": false,
+      "bookings": [
+        {
+          "date": "2025-03-06",
+          "time": "07:00",
+          "route": "Nakuru-Eldoret"
+        },
+        {
+          "date": "2025-03-03",
+          "time": "10:00",
+          "route": "Nakuru-Eldoret"
+        }
+      ]
+    },
+    {
+      "id": "Seat8",
+      "available": false,
+      "bookings": [
+        {
+          "date": "2025-03-06",
+          "time": "07:00",
+          "route": "Eldoret-Nakuru"
+        },
+        {
+          "date": "2025-03-05",
+          "time": "07:00",
+          "route": "Eldoret-Nakuru"
+        },
+        {
+          "date": "2025-03-04",
+          "time": "07:00",
+          "route": "Eldoret-Nakuru"
+        },
+        {
+          "date": "2025-03-04",
+          "time": "09:00",
+          "route": "Eldoret-Nakuru"
+        },
+        {
+          "date": "2025-03-03",
+          "time": "09:00",
+          "route": "Eldoret-Nakuru"
+        },
+        {
+          "date": "2025-03-03",
+          "time": "10:00",
+          "route": "Eldoret-Nakuru"
+        }
+      ]
+    },
+    {
+      "id": "Seat9",
+      "available": false,
+      "bookings": [
+        {
+          "date": "2025-03-05",
+          "time": "07:00",
+          "route": "Eldoret-Nakuru"
+        },
+        {
+          "date": "2025-03-04",
+          "time": "09:00",
+          "route": "Eldoret-Nakuru"
+        }
+      ]
+    },
+    {
+      "id": "Seat10",
+      "available": false,
+      "bookings": [
+        {
+          "date": "2025-03-06",
+          "time": "07:00",
+          "route": "Nakuru-Eldoret"
+        },
+        {
+          "date": "2025-03-05",
+          "time": "07:00",
+          "route": "Eldoret-Nakuru"
+        },
+        {
+          "date": "2025-03-06",
+          "time": "07:00",
+          "route": "Eldoret-Nakuru"
+        },
+        {
+          "date": "2025-03-29",
+          "time": "07:00",
+          "route": "Eldoret-Nakuru"
+        },
+        {
+          "date": "2025-03-06",
+          "time": "09:00",
+          "route": "Eldoret-Nakuru"
+        },
+        {
+          "date": "2025-03-05",
+          "time": "07:00",
+          "route": "Nakuru-Eldoret"
+        },
+        {
+          "date": "2025-03-06",
+          "time": "07:00",
+          "route": "Meru-Nairobi"
+        },
+        {
+          "date": "2025-03-28",
+          "time": "07:00",
+          "route": "Nairobi-Eldoret"
+        },
+        {
+          "date": "2025-03-28",
+          "time": "07:00",
+          "route": "Eldoret-Nairobi"
+        },
+        {
+          "date": "2025-03-07",
+          "time": "07:00",
+          "route": "Eldoret-Mombasa"
+        },
+        {
+          "date": "2025-03-28",
+          "time": "07:00",
+          "route": "Eldoret-Mombasa"
+        }
+      ]
+    },
+    {
+      "id": "Seat11",
+      "available": true,
+      "bookings": [
+        {
+          "date": "2025-03-05",
+          "time": "07:00",
+          "route": "Eldoret-Nakuru"
+        }
+      ]
+    },
+    {
+      "id": "Seat12",
+      "available": true,
+      "bookings": [
+        {
+          "date": "2025-03-05",
+          "time": "07:00",
+          "route": "Eldoret-Nakuru"
+        }
+      ]
+    },
+    {
+      "id": "Seat13",
+      "available": true
+    },
+    {
+      "id": "Seat14",
+      "available": true
+    }
+  ]
+}
