@@ -403,26 +403,49 @@ function smoothScroll() {
 // moves images every 4 seconds
 setInterval(smoothScroll, 4000);
 
-
 const weatherInfoElements = document.querySelectorAll(".weather-info");
 
-async function fetchWeather(location, index) {
+// Function to fetch weather data
+function fetchWeather(location, index) {
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&longitude=${location.lon}&current_weather=true`;
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("Failed to fetch weather data");
-        const data = await response.json();
-        weatherInfoElements[index].innerHTML = `
-            <h2>${location.name}</h2>
-            <p>Temperature: ${data.current_weather.temperature}°C</p>
-        `;
-    } catch (error) {
-        weatherInfoElements[index].innerHTML = `<h2>${location.name}</h2><p>Weather data not available</p>`;
-    }
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to fetch weather data");
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.current_weather) {
+                weatherInfoElements[index].innerHTML = `
+                    <h2>${location.name}</h2>
+                    <p>Temperature: ${data.current_weather.temperature}°C</p>
+                `;
+            } else {
+                weatherInfoElements[index].innerHTML = `
+                    <h2>${location.name}</h2>
+                    <p>Weather data not available</p>
+                `;
+            }
+        })
+        .catch(error => {
+            weatherInfoElements[index].innerHTML = `
+                <h2>${location.name}</h2>
+                <p>Weather data not available</p>
+            `;
+        });
 }
 
-// Fetch weather for the locations
-images.forEach((img, index) => fetchWeather(img, index));
+// Example locations
+const locations = [
+    { name: "Nairobi", lat: -1.286389, lon: 36.817223 },
+    { name: "Mombasa", lat: -4.0435, lon: 39.6682 }
+];
+
+// Fetch weather for each location
+locations.forEach((location, index) => fetchWeather(location, index));
+;
 
 
 
