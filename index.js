@@ -391,3 +391,37 @@ currentIndex++;
 
 // Moves images every 4 seconds
 setInterval(smoothScroll, 4000);
+
+
+
+
+
+const line1Text = "Book An Adventure Both Within And Beyond the Borders.";
+const line2Text = "Explore The Beauty of Your Homeland && Venture Beyond The Borders!";
+const line1Element = document.getElementById("line1");
+const line2Element = document.getElementById("line2");
+let index = 0;
+
+// line 1
+function typeLine1() {
+    if (index < line1Text.length) {
+line1Element.textContent += line1Text[index];
+ index++;
+ setTimeout(typeLine1, 100); // text speed
+ } else {
+setTimeout(typeLine2, 500); // Delay before second line appears
+    }
+}
+//line 2
+function typeLine2() {
+let i = 0;
+ function type() {
+  if (i < line2Text.length) {
+ line2Element.textContent += line2Text[i];
+ i++;
+  setTimeout(type, 100); // line2 speed
+        
+  }}
+    type();
+}
+typeLine1();
