@@ -189,8 +189,11 @@ color: #ff6600;
 
 
  .BOOKTOUR {
-background-color: #0077b6; /* Ocean blue */
+
  padding: 20px;
+ background: linear-gradient(to bottom,#0077b6  70%,  rgb(236, 224, 217) 100%); /* background color fade
+ */
+                
 text-align: center;
 border-radius: 10px;
 }
@@ -288,6 +291,7 @@ gap: 56px;
 width: 95%; 
 margin: auto; 
 padding: 20px;
+
 
 }
 
@@ -407,8 +411,6 @@ grid-column: span 2;
 background: linear-gradient(135deg, #0056b3, #003f7f);
 transform: scale(1.05);
 }
-
-
 
 #contact {
 width: 96%;
@@ -532,15 +534,10 @@ box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
     grid-column: span 2
 
 }
-
-
 #tours-tripsForm button:hover {
 background: linear-gradient(135deg, #0056b3, #003f7f);
 transform: scale(1.05);
 }
-
-
-
 
 /* Contact Links */
 #contact a {
@@ -553,15 +550,11 @@ transform: scale(1.05);
     color: #0056b3;
     text-decoration: underline;
 
-
-
 }
 
 
 
-
-
- /* styling on smaller screens */
+ /* styling for smaller screens */
 
 @media (max-width: 768px) {
 #vehicleRegistrationForm {
