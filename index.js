@@ -402,7 +402,7 @@ const line1Element = document.getElementById("line1");
 const line2Element = document.getElementById("line2");
 let index = 0;
 
-// line 1
+//  line 1
 function typeLine1() {
     if (index < line1Text.length) {
 line1Element.textContent += line1Text[index];
@@ -412,7 +412,7 @@ line1Element.textContent += line1Text[index];
 setTimeout(typeLine2, 500); // Delay before second line appears
     }
 }
-//line 2
+//line2
 function typeLine2() {
 let i = 0;
  function type() {
@@ -425,3 +425,5 @@ let i = 0;
     type();
 }
 typeLine1();
+
+

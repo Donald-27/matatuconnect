@@ -277,42 +277,186 @@ color: #043263;
 }
 /* Footer */
 footer {
+    border-radius: 0.5cm;
  background-color: #072a51;
  color: white;
 text-align: center;
 padding: 10px;}
 
 
+/* Booking Offices Section */
 #booking-offices {
-    background-image: url(nile.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment:scroll ;
-    background-size: contain;
-display: grid;
-grid-template-columns: repeat(3, 1fr); 
-gap: 56px; 
-width: 95%; 
-margin: auto; 
-padding: 20px;
+    background: linear-gradient(to bottom, 
+        rgb(236, 224, 217) 0%,    /* top fading */
+        #3399cc 15%,              
+        #3399cc 60%,              /* the blue in the middle */
+        rgb(236, 224, 217) 100%   /* bottom fade*/
+    );
 
 
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
 }
 
+
+
+
+
+
+/* Grid Container */
+.offices-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+    justify-content: center; 
+    align-items: center; 
+    width: 80%; 
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+/* Individual Office Box */
 .office {
-    background-color: rgba(0, 0, 0, 0.5);
-padding: 15px;
-border-radius: 10px;
-text-align: center;
-
-color: rgb(42, 166, 215)
+    background: rgba(255, 255, 255, 0.2); 
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%; 
+    margin: 0;
+    transition: transform 0.3s ease-in-out; 
 }
+
+/* Hover Effect */
 .office:hover {
-
-
-transform: scale(1.05);
-transition: transform 0.2s;
+    transform: scale(1.05);
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .offices-container {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    #booking-offices {
+        clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%); /* polygon shape */
+    }
+    .offices-container {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+        width: 95%;
+    }
+}
+
+/* Office Title */
+.office h3 {
+    margin-bottom: 5px;
+}
+
+
+
+
+/* Fleet Container */
+.fleet-container {
+    background: #3399cc;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 700px;
+    margin: 20px;
+    font-weight: bold;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #003366;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Heading Styling */
+.fleet-container h4 {
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Paragraph Styling */
+.fleet-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Register Button */
+.register-tab {
+    background: #ffcc00;
+    color: #003366;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.register-tab:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fleet-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+    .fleet-container h4 {
+        font-size: 18px;
+    }
+    .fleet-container p {
+        font-size: 14px;
+    }
+    .register-btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
 
 /* Vehicle Registration Section */
 #register-vehicle {
@@ -574,13 +718,13 @@ background-image: url(serengeti.jpg);
 /* Paragraph Styling */
 .about-content p {
     font-size: 24px;
-    color: #222; /* Darker for better readability */
+    color: #222; 
     margin-bottom: 15px;
 }
 
 /* Key Features Box */
 .about-list {
-    background: transparent; /* Light semi-transparent background */
+    background: transparent; 
     padding: 20px;
    
     margin-top: 20px;
@@ -625,15 +769,8 @@ background-image: url(serengeti.jpg);
     font-weight: bold;
     color: #003366;
     margin-top: 20px;
+    animation: typing 3s steps(40, end), blink-caret 0.5s step-end infinite;
 }
-
-
-
-
-
-
-
-
 
 
 
