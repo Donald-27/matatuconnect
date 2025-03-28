@@ -272,14 +272,7 @@
 <label for="email">Email</label>
 <input type="email" id="email" name="email" placeholder="Enter your email address" required>
 
-         <!-- Vehicle Type -->
-<label for="vehicleType">Vehicle Type</label>
-<select id="vehicleType" name="vehicleType" required>
-    <option value="">Select Vehicle Type</option>
-    <option value="matatu">Matatu</option>
-    <option value="bus">Bus</option>
-    <option value="van">Van</option>
-</select>
+  
 
         <!-- Vehicle Registration Number -->
 <label for="vehicleNumber">Vehicle Registration Number</label>
@@ -289,6 +282,19 @@
 <label for="seatingCapacity">Seating Capacity</label>
 <input type="number" id="seatingCapacity" name="seatingCapacity" placeholder="Enter seating capacity" required>
 
+
+       <!-- Vehicle Type -->
+       <label for="vehicleType">Vehicle Type</label>
+       <select id="vehicleType" name="vehicleType" required>
+           <option value="">Select Vehicle Type</option>
+           <option value="matatu">Matatu</option>
+           <option value="bus">Bus</option>
+           <option value="van">Van</option>
+       </select>
+
+
+
+
               <!-- Upload Vehicle Image -->
 <label for="vehicleImage">Upload Vehicle Image</label>
 <input type="file" id="vehicleImage" name="vehicleImage" accept="image/*" required>
@@ -297,11 +303,9 @@
 <button type="submit">Register Vehicle</button>
     </form>
 </section>
-
-
 <!-- Tours and Trips Section -->
 <div id="tours-trips">
-    <h2>Book Your Tour</h2>
+    <h2>Book A Trip</h2>
 <form id="tours-tripsForm">
 
 <div>
@@ -361,26 +365,38 @@
     <option value="Addo Elephant National Park" data-price="3200" data-date="08/09/2025">South Africa - Addo Elephant National Park</option>
 </select> </div>
 
-<div>
-            <label for="tourDate">Tour Date</label>
-            <input type="text" id="tourDate" name="tourDate" readonly>
+<form id="tours-tripsForm">
+    <!-- Tour Date -->
+    <div class="input-container">
+      <label for="tour-date">Tour Date</label>
+      <input type="date" id="tour-date" name="tour-date" required>
     </div>
- <div>
- <label for="travelers">Number of Travelers</label>
- <input type="number" id="travelers" name="travelers" min="1" max="20" placeholder="Enter number of travelers" required> </div>
-
-<div>
-<label for="vehicle">Preferred Vehicle</label>
- <select id="vehicle" name="vehicle" required>
-  <option value="Tour Bus">Tour Bus</option>
- <option value="Shuttle Van">Shuttle Van</option>
- <option value="Private Car">Private Car</option>
-        </select></div>
-<div class="full-width">
-  <label for="price">Price (Ksh)</label>
-<input type="text" id="price" name="price" readonly></div>
-<button type="submit">Book Tour</button> <!-- booking tour submit button -->
-</form>
+  
+    <!-- Number of Travelers -->
+    <div class="input-container">
+      <label for="travelers">Number of Travelers</label>
+      <input type="number" id="travelers" name="travelers" min="1" max="20" placeholder="Enter number of travelers" required>
+    </div>
+  
+    <!-- Preferred Vehicle -->
+    <div class="input-container">
+      <label for="vehicle">Preferred Vehicle</label>
+      <select id="vehicle" name="vehicle" required>
+        <option value="Tour Bus">Tour Bus</option>
+        <option value="Shuttle Van">Shuttle Van</option>
+        <option value="Private Car">Private Car</option>
+      </select>
+    </div>
+  
+    <!-- Price -->
+    <div class="input-container full-width">
+      <label for="price">Price (Ksh)</label>
+      <input type="text" id="price" name="price" readonly>
+    </div>
+  
+    <!-- Submit Button -->
+    <button type="submit">Book Tour</button>
+  </form>
 </div>
 
 
@@ -403,65 +419,6 @@
 
 
 
-<section id="about" class="about-us">
-    
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="container">
-        <h2>About Us</h2>
-        <p>Welcome to <strong>MatatuConnekt</strong>, your trusted travel partner offering reliable and affordable transport services across Kenya. We are committed to providing safe, comfortable, and convenient travel solutions for our passengers.</p>
-        <br>
-        <h3 style="font-weight: bold; color: darkblue; text-align: center;">Why Choose Us?</h3>
-        
-        <div style="text-align: center; padding: 50px 20px;">
-            <h2 style="color: rgb(3, 3, 74); font-size: 14px; font-weight: bold; margin-bottom: 20px; text-transform: uppercase;">
-                We offer:
-            </h2>
-        
-            <ul style="list-style: none; padding: 0; max-width: 600px; margin: auto; text-align: left;">
-                <li style="margin: 10px 0;">
-                    <strong style="color: rgb(3, 3, 74);">Affordable Prices:</strong> Enjoy competitive fares to major destinations.
-                </li>
-                <li style="margin: 10px 0;">
-                    <strong style="color: rgb(3, 3, 74);">Monthly Tour Offers:</strong> Explore Kenya with our exclusive tour packages.
-                </li>
-                <li style="margin: 10px 0;">
-                    <strong style="color: rgb(3, 3, 74);">Vehicle Registration:</strong> Own a matatu? Join our fleet and grow with us!
-                </li>
-                <li style="margin: 10px 0;">
-                    <strong style="color: rgb(3, 3, 74);">Expanding Routes:</strong> We are continuously adding new travel routes.
-                </li>
-            </ul>
-        </div>
-        
-        <p style="text-align: center;">Join us for a seamless travel experience. Whether you're commuting daily or planning a getaway, <strong>MatatuConnekt</strong> is here to serve you!</p>
-    </div>
-    <br><br>
-</section>
-<section id="contact">
-<h2 style="color: skyblue;" >Contact Us</h2>
-<p>📞 Phone: <a href="tel:+254715130302">+254 751303029</a></p>
-<p>📧 Email: <a href="mailto:kipropdonald@gmail.com">Matatuconnekt@gmail.com</a></p>
-</section> <br>
-
-
-
-
-
-
   
 
 
@@ -471,15 +428,43 @@
 
 
 
-
-
-
-
- <!-- Footer Section -->
+<!-- Blue Background Covering About Us to Footer -->
+<div class="blue-background">
     
-<footer>
-<p>&copy; 2025 MatatuConnekt. All Rights Reserved.</p>
-</footer>
+    <!-- About Section (Skyblue on Top of Blue) -->
+    <div class="about-container">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>Welcome to <strong>MatatuConnekt</strong>, your trusted travel partner offering reliable and affordable transport services across Kenya.</p>
+            <h3>Why Choose Us?</h3>
+            <div class="about-list">
+                <h2>We Offer:</h2>
+                <ul>
+                    <li><strong>Affordable Prices:</strong> Competitive fares to major destinations.</li>
+                    <li><strong>Monthly Tour Offers:</strong> Explore Kenya with exclusive packages.</li>
+                    <li><strong>Vehicle Registration:</strong> Own a matatu? Join our fleet!</li>
+                    <li><strong>Expanding Routes:</strong> New travel routes continuously added.</li>
+                </ul>
+            </div>
+            <p class="about-footer">Join us for a seamless travel experience with <strong>MatatuConnekt</strong>!</p>
+        </div>
+    </div>
+
+    <!-- Contact Us & Footer Section (Blue Background) -->
+    <div class="contact-footer-container">
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>📞 Phone: <a href="tel:+254715130302">+254 751303029</a></p>
+            <p>📧 Email: <a href="mailto:kipropdonald@gmail.com">Matatuconnekt@gmail.com</a></p>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 MatatuConnekt. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+</div>
+
 
 <script src="index.js"></script> <!-- Link to external JavaScript -->
 </body>
