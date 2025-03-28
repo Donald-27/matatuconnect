@@ -191,8 +191,7 @@ color: #ff6600;
  .BOOKTOUR {
 
  padding: 20px;
- background: linear-gradient(to bottom,#0077b6  70%,  rgb(236, 224, 217) 100%); /* background color fade
- */
+ background: linear-gradient(to bottom,#0077b6  70%,  rgb(236, 224, 217) 100%); /* background color fade */
                 
 text-align: center;
 border-radius: 10px;
@@ -312,6 +311,7 @@ transition: transform 0.2s;
 /* Vehicle Registration Section */
 #register-vehicle {
 height: auto;
+width: 50%;
 max-width: 100%;
 margin: 40px 0 40px auto;
 padding: 25px;
@@ -319,7 +319,12 @@ background: #ffffff;
 border-radius: 10px;
 box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
 border: 2px solid #007bff;
-transition: transform 0.3s ease-in-out; }
+transition: transform 0.3s ease-in-out; 
+background-image: url('Bomayan.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat; 
+}
 
 
 #register-vehicle:hover {
@@ -351,18 +356,20 @@ grid-column: span 2;
 /* Label Styling */
 #vehicleRegistrationForm label {
 font-weight: bold;
-color: #333;
+color: white;
 font-size: 16px;
 display: block;
 margin-bottom: 5px;
 }
 
+
+
 /* Input Fields & Select Box */
 #vehicleRegistrationForm input,
 #vehicleRegistrationForm select {
-width: 100%;
-padding: 12px;
-font-size: 16px;
+width: 180px;
+padding: 15px;
+font-size: 12px;
 border: 2px solid #ddd;
 border-radius: 8px;
 background: #f8f9fa;
@@ -461,6 +468,7 @@ grid-template-columns: repeat(2, 1fr); /* Two-column layout */
 gap: 16px;
 width: 100%;
 align-items: center;
+padding: 15px;
 }
 
 
