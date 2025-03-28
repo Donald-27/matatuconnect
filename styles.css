@@ -546,7 +546,7 @@ background-image: url(serengeti.jpg);
 /* About us section skyblue background */
 .about-container {
     background: linear-gradient(to top, skyblue, rgb(236, 224, 217));
-    background-color: skyblue;
+    background-color: transparent;
     color: black;
     padding: 60px 20px;
     text-align: center;
@@ -558,17 +558,74 @@ background-image: url(serengeti.jpg);
 /* Contact & Footer Section */
 .contact-footer-container {
     color: white;
-    padding: 60px 20px;
+    padding: 37px 20px;
   text-align: center;
     position: relative;
 }
 
-/* Contact Links */
+/* Contacts */
 #contact a {
     text-decoration: none;
     font-weight: bold;
     color: lightblue;   }
 
+
+    
+/* Paragraph Styling */
+.about-content p {
+    font-size: 24px;
+    color: #222; /* Darker for better readability */
+    margin-bottom: 15px;
+}
+
+/* Key Features Box */
+.about-list {
+    background: transparent; /* Light semi-transparent background */
+    padding: 20px;
+   
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Key Features Title */
+.about-list h2 {
+    text-align: left;
+    font-size: 19px;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+/* List Styling */
+.about-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-list li {
+    font-size: 1.2rem;
+    padding: 10px;
+    background: transparent;
+    margin-bottom: 10px;
+    
+    display: flex;
+    align-items: center;
+}
+
+/* Highlighted Icons in List */
+.about-list li strong {
+    font-size: 1.3rem;
+    color: #ff6600;
+    margin-right: 8px;
+}
+
+/* Footer Message */
+.about-footer {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #003366;
+    margin-top: 20px;
+}
 
 
 
