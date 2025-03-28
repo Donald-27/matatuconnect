@@ -343,23 +343,6 @@ padding: 10px;}
     transform: scale(1.05);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .offices-container {
-        grid-template-columns: repeat(2, 1fr);
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    #booking-offices {
-        clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%); /* polygon shape */
-    }
-    .offices-container {
-        grid-template-columns: 1fr; /* 1 column on small screens */
-        width: 95%;
-    }
-}
 
 /* Office Title */
 .office h3 {
@@ -369,8 +352,13 @@ padding: 10px;}
 
 
 
-/* Fleet Container */
-.fleet-container {
+
+
+
+/* Shared Styling for Both Tours and Fleet Containers */
+
+
+.tours-container, .fleet-container {
     background: #3399cc;
     padding: 30px;
     border-radius: 15px;
@@ -384,8 +372,8 @@ padding: 10px;}
     animation: fadeInUp 1s ease-in-out;
 }
 
-/* Heading Styling */
-.fleet-container h4 {
+/* Heading Styling for Both Containers */
+.tours-container h4, .fleet-container h4 {
     font-weight: bolder;
     letter-spacing: 2px;
     font-size: 22px;
@@ -393,16 +381,16 @@ padding: 10px;}
     margin-bottom: 10px;
 }
 
-/* Paragraph Styling */
-.fleet-container p {
+
+.tours-container p, .fleet-container p {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
-/* Register Button */
-.register-tab {
-    background: #ffcc00;
+
+.tours-container a, .fleet-container a {
+    background: #ff6600;
     color: #003366;
     padding: 12px 20px;
     text-decoration: none;
@@ -415,7 +403,8 @@ padding: 10px;}
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.register-tab:hover {
+/* Button Hover Effect for Both Containers */
+.tours-container a:hover, .fleet-container a:hover {
     background: white;
     transform: scale(1.05);
 }
@@ -429,24 +418,6 @@ padding: 10px;}
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .fleet-container {
-        padding: 20px;
-        max-width: 90%;
-    }
-    .fleet-container h4 {
-        font-size: 18px;
-    }
-    .fleet-container p {
-        font-size: 14px;
-    }
-    .register-btn {
-        padding: 10px 15px;
-        font-size: 14px;
     }
 }
 
@@ -509,7 +480,7 @@ grid-column: span 2;
     color: white;
     font-size: 14px;
     margin-bottom: 5px;
-    display: block; /* Ensures the label takes up full width */
+    display: block; 
     width: 80%;
 max-width: 100%;
 }
@@ -897,3 +868,42 @@ gap: 20px;
         margin: 0 auto; 
     }
 }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .offices-container {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    #booking-offices {
+        clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%); /* polygon shape */
+    }
+    .offices-container {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+        width: 95%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tours-container, .fleet-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+    
+    .tours-container h4, .fleet-container h4 {
+        font-size: 18px;
+    }
+
+    .tours-container p, .fleet-container p {
+        font-size: 14px;
+    }
+
+    .tours-container a, .fleet-container a {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+

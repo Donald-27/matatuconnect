@@ -308,13 +308,17 @@
 <div class="tours-container">
     <h4>EXPLORE NEW DESTINATIONS WITH MATATUCONNECT!</h4>
     <p>Embark on unforgettable journeys across Kenya and beyond. Book a tour today and experience adventure like never before!</p>
-    <a href="#book-tour" class="book-tab">Book</a>
+    <a href="#book-tour" class="book-tab">Book Now</a>
         
 </div>
 
+
+
+
 <div id="tours-trips">
-    <h2>Book A Trip</h2>
-<form id="tours-tripsForm">
+    <form id="tours-tripsForm">
+    
+
 
 <div>
     <label for="name">Full Name</label>
@@ -331,23 +335,14 @@
 <input type="email" id="email" name="email" placeholder="Enter your email" required>
  </div>
 
-<div>
-<label for="country">Select Country</label>
-<select id="country" name="country" required>
-     <option value="">Choose a country</option>
-    <option value="Kenya">Kenya</option>
-     <option value="Tanzania">Tanzania</option>
-    <option value="Uganda">Uganda</option>
-    <option value="Rwanda">Rwanda</option>
-    <option value="South Africa">South Africa</option>
-</select></div>
+
 
 <div>
 <label for="package">Tour Package</label>
 
 <select id="package" name="package" required>
     <option value="">Select a package</option>
-    <option value=" Mara" data-price="2000" data-date="08/09/2025">Kenya - Masai Mara</option>
+    <option value="Maasai Mara" data-price="2000" data-date="08/09/2025">Kenya - Masai Mara</option>
     <option value="Amboseli National Park" data-price="1000" data-date="08/09/2025">Kenya - Amboseli National Park</option>
     <option value="Tsavo National Park" data-price="3000" data-date="08/09/2025">Kenya - Tsavo National Park</option>
     <option value="Diani Beach" data-price="4700" data-date="08/09/2025">Kenya - Diani Beach</option>
@@ -373,12 +368,12 @@
     <option value="Addo Elephant National Park" data-price="3200" data-date="08/09/2025">South Africa - Addo Elephant National Park</option>
 </select> </div>
 
-<form id="tours-tripsForm">
+
     <!-- Tour Date -->
     <div class="input-container">
-      <label for="tour-date">Tour Date</label>
-      <input type="date" id="tour-date" name="tour-date" required>
-    </div>
+            <label for="tour-date">Tour Date</label>
+            <input type="date" id="tour-date" name="tour-date" readonly>
+        </div>
   
     <!-- Number of Travelers -->
     <div class="input-container">

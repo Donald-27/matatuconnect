@@ -427,3 +427,62 @@ let i = 0;
 typeLine1();
 
 
+
+
+
+
+// DOM Elements
+const form = document.getElementById('tours-tripsForm');
+const packageSelect = document.getElementById('package');
+const priceInput = document.getElementById('price');
+const tourDateInput = document.getElementById('tour-date');
+const travelersInput = document.getElementById('travelers');
+
+// Handle package selection
+packageSelect.addEventListener('change', function () {
+    // Get selected package option
+    const selectedOption = packageSelect.options[packageSelect.selectedIndex];
+    
+    // Extract price and date from data attributes
+    const price = selectedOption.getAttribute('data-price');
+    const date = selectedOption.getAttribute('data-date');
+    
+    // Set price and tour date inputs
+    priceInput.value = price ? price : '';
+    tourDateInput.value = date ? date : '';
+});
+
+// Handle form submission
+form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Gather form data
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const package = packageSelect.value;
+    const tourDate = tourDateInput.value;
+    const travelers = travelersInput.value;
+    const vehicle = document.getElementById('vehicle').value;
+    const price = priceInput.value;
+
+    // Basic validation
+    if (!name || !phone || !email || !package || !tourDate || !travelers || !vehicle || !price) {
+        alert("Please fill out all fields.");
+        return;
+    }
+
+    // Display a confirmation message or process the booking
+    alert(`Tour Booking Successful!\n
+    Name: ${name}\n
+    Phone: ${phone}\n
+    Email: ${email}\n
+    Package: ${package}\n
+    Tour Date: ${tourDate}\n
+    Travelers: ${travelers}\n
+    Vehicle: ${vehicle}\n
+    Price: Ksh ${price}`);
+    
+    // Optionally, clear the form after submission
+    form.reset();
+});
