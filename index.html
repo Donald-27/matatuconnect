@@ -252,7 +252,7 @@
 
 <section id="register-vehicle">
     
-    
+    <section id="registration-background">
 
 <h2>Register Now</h2>
 <form id="vehicleRegistrationForm">
@@ -298,109 +298,112 @@
 <!-- Submit Button -->
 <button type="submit">Register Vehicle</button>
     </form>
+</section> <br>
 </section>
 <!-- Tours and Trips Section -->
-
-
-
-
-
+<br>
 <div class="tours-container">
     <h4>EXPLORE NEW DESTINATIONS WITH MATATUCONNECT!</h4>
     <p>Embark on unforgettable journeys across Kenya and beyond. Book a tour today and experience adventure like never before!</p>
     <a href="#book-tour" class="book-tab">Book Now</a>
-        
 </div>
+<br><br>
 
 
-
-
+<section id="tourbackground">
+    <div class="form-group">
 <div id="tours-trips">
     <form id="tours-tripsForm">
-    
+        <!-- Name -->
+        <div>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
 
+        <!-- Phone Number -->
+        <div>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
 
-<div>
-    <label for="name">Full Name</label>
-    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-</div>
+        <!-- Email Address -->
+        <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
 
-<div>
-    <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-</div>
+        <!-- Tour Package -->
+        <div>
+            <label for="package">Tour Package</label>
+            <select id="package" name="package" required>
+                <option value="">Select a package</option>
+                <option value="Maasai Mara" data-price="2000" data-date="2025-09-08">Kenya - Maasai Mara</option>
+                <option value="Amboseli National Park" data-price="1000" data-date="2025-09-08">Kenya - Amboseli National Park</option>
+                <option value="Tsavo National Park" data-price="3000" data-date="2025-09-08">Kenya - Tsavo National Park</option>
+                <option value="Diani Beach" data-price="4700" data-date="2025-09-08">Kenya - Diani Beach</option>
+                <option value="Hell’s Gate National Park" data-price="7800" data-date="2025-09-08">Kenya - Hell's Gate National Park</option>
+                <option value="Serengeti" data-price="2300" data-date="2025-09-08">Tanzania - Serengeti</option>
+                <option value="Zanzibar" data-price="2500" data-date="2025-09-08">Tanzania - Zanzibar</option>
+                <option value="Mount Kilimanjaro" data-price="2800" data-date="2025-09-08">Tanzania - Mount Kilimanjaro</option>
+                <option value="Selous Game Reserve" data-price="3200" data-date="2025-09-08">Tanzania - Selous Game Reserve</option>
+                <option value="Mafia Island" data-price="2700" data-date="2025-09-08">Tanzania - Mafia Island</option>
+                <option value="Ruaha National Park" data-price="2900" data-date="2025-09-08">Tanzania - Ruaha National Park</option>
+                <option value="Queen Elizabeth National Park" data-price="2200" data-date="2025-09-08">Uganda - Queen Elizabeth National Park</option>
+                <option value="Murchison Falls National Park" data-price="2600" data-date="2025-09-08">Uganda - Murchison Falls National Park</option>
+                <option value="Rwenzori Mountain" data-price="3100" data-date="2025-09-08">Uganda - Rwenzori Mountain</option>
+                <option value="Jinja Nile" data-price="2400" data-date="2025-09-08">Uganda - Jinja Nile</option>
+                <option value="Volcanoes National Park" data-price="3500" data-date="2025-09-08">Rwanda - Volcanoes National Park</option>
+                <option value="Lake Kivu" data-price="2800" data-date="2025-09-08">Rwanda - Lake Kivu</option>
+                <option value="Kigali Genocide Memorial" data-price="1800" data-date="2025-09-08">Rwanda - Kigali Genocide Memorial</option>
+                <option value="Kruger National Park" data-price="3900" data-date="2025-09-08">South Africa - Kruger National Park</option>
+                <option value="Table Mountain" data-price="4200" data-date="2025-09-08">South Africa - Table Mountain</option>
+                <option value="Robben Island" data-price="2500" data-date="2025-09-08">South Africa - Robben Island</option>
+                <option value="Victoria & Alfred Waterfront" data-price="2900" data-date="2025-09-08">South Africa - Victoria & Alfred Waterfront</option>
+                <option value="Cape Winelands" data-price="3400" data-date="2025-09-08">South Africa - Cape Winelands</option>
+                <option value="Addo Elephant National Park" data-price="3200" data-date="2025-09-08">South Africa - Addo Elephant National Park</option>
+            </select>
+        </div>
 
- <div>
-   <label for="email">Email Address</label>
-<input type="email" id="email" name="email" placeholder="Enter your email" required>
- </div>
-
-
-
-<div>
-<label for="package">Tour Package</label>
-
-<select id="package" name="package" required>
-    <option value="">Select a package</option>
-    <option value="Maasai Mara" data-price="2000" data-date="08/09/2025">Kenya - Masai Mara</option>
-    <option value="Amboseli National Park" data-price="1000" data-date="08/09/2025">Kenya - Amboseli National Park</option>
-    <option value="Tsavo National Park" data-price="3000" data-date="08/09/2025">Kenya - Tsavo National Park</option>
-    <option value="Diani Beach" data-price="4700" data-date="08/09/2025">Kenya - Diani Beach</option>
-   <option value="Hell’s Gate National Park" data-price="7800" data-date="08/09/2025">Kenya - Hell's Gate National Park</option>
-    <option value="Serengeti" data-price="2300" data-date="08/09/2025">Tanzania - Serengeti</option>
-    <option value="Zanzibar" data-price="2500" data-date="08/09/2025">Tanzania - Zanzibar</option>
-    <option value="Mount Kilimanjaro" data-price="2800" data-date="08/09/2025">Tanzania - Mount Kilimanjaro</option>
-    <option value="Selous Game Reserve" data-price="3200" data-date="08/09/2025">Tanzania - Selous Game Reserve</option>
-    <option value="Mafia Island" data-price="2700" data-date="08/09/2025">Tanzania - Mafia Island</option>
-    <option value="Ruaha National Park" data-price="2900" data-date="08/09/2025">Tanzania - Ruaha National Park</option>
-    <option value="Queen Elizabeth National Park" data-price="2200" data-date="08/09/2025">Uganda - Queen Elizabeth National Park</option>
-    <option value="Murchison Falls National Park" data-price="2600" data-date="08/09/2025">Uganda - Murchison Falls National Park</option>
-    <option value="Rwenzori Mountain" data-price="3100" data-date="08/09/2025">Uganda - Rwenzori Mountain</option>
-    <option value="Jinja Nile" data-price="2400" data-date="08/09/2025">Uganda - Jinja Nile</option>
-    <option value="Volcanoes National Park" data-price="3500" data-date="08/09/2025">Rwanda - Volcanoes National Park</option>
-    <option value="Lake Kivu" data-price="2800" data-date="08/09/2025">Rwanda - Lake Kivu</option>
-    <option value="Kigali Genocide Memorial" data-price="1800" data-date="08/09/2025">Rwanda - Kigali Genocide Memorial</option>
-    <option value="Kruger National Park" data-price="3900" data-date="08/09/2025">South Africa - Kruger National Park</option>
-    <option value="Table Mountain" data-price="4200" data-date="08/09/2025">South Africa - Table Mountain</option>
-    <option value="Robben Island" data-price="2500" data-date="08/09/2025">South Africa - Robben Island</option>
-     <option value="Victoria & Alfred Waterfront" data-price="2900" data-date="08/09/2025">South Africa - Victoria & Alfred Waterfront</option>
-    <option value="Cape Winelands" data-price="3400" data-date="08/09/2025">South Africa - Cape Winelands</option>
-    <option value="Addo Elephant National Park" data-price="3200" data-date="08/09/2025">South Africa - Addo Elephant National Park</option>
-</select> </div>
-
-
-    <!-- Tour Date -->
-    <div class="input-container">
+        <!-- Tour Date -->
+        <div class="input-container">
             <label for="tour-date">Tour Date</label>
             <input type="date" id="tour-date" name="tour-date" readonly>
         </div>
-  
-    <!-- Number of Travelers -->
-    <div class="input-container">
-      <label for="travelers">Number of Travelers</label>
-      <input type="number" id="travelers" name="travelers" min="1" max="20" placeholder="Enter number of travelers" required>
-    </div>
-  
-    <!-- Preferred Vehicle -->
-    <div class="input-container">
-      <label for="vehicle">Preferred Vehicle</label>
-      <select id="vehicle" name="vehicle" required>
-        <option value="Tour Bus">Tour Bus</option>
-        <option value="Shuttle Van">Shuttle Van</option>
-        <option value="Private Car">Private Car</option>
-      </select>
-    </div>
-  
-    <!-- Price -->
-    <div class="input-container full-width">
-      <label for="price">Price (Ksh)</label>
-      <input type="text" id="price" name="price" readonly>
-    </div>
-  
-    <!-- Submit Button -->
-    <button type="submit">Book Tour</button>
-  </form>
+
+        <!-- Preferred Vehicle -->
+        <div class="input-container">
+            <label for="vehicle">Preferred Vehicle</label>
+            <select id="vehicle" name="vehicle" required>
+                <option value="Tour Bus">Tour Bus</option>
+                <option value="Shuttle Van">Shuttle Van</option>
+                <option value="Private Car">Private Car</option>
+            </select>
+        </div>
+
+        <!-- Number of Travelers -->
+        <div class="input-container">
+            <label for="travelers"> Number of Travelers</label>
+            <input type="number" id="travelers" name="travelers" min="1" max="20" placeholder="Enter number of travelers" required>
+        </div>
+
+        <!-- Travel Cost -->
+        <div class="input-container full-width">
+            <label for="travelcost">Travel Cost (Ksh)</label>
+            <input type="text" id="travelcost" name="travelcost" readonly>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Book Tour</button>
+    </form>
 </div>
+</div>
+</section>
+
+
+
+
+
+
 
 
 <!-- Blue Background Covering About Us to Footer -->

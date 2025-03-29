@@ -309,7 +309,29 @@ padding: 10px;}
     z-index: 1;
 }
 
+#registration-background {background: linear-gradient(to bottom, 
+    rgb(236, 224, 217) 0%,    /* top fading */
+    #3399cc 15%,              
+    #3399cc 60%,              /* the blue in the middle */
+    rgb(236, 224, 217) 100%   /* bottom fade*/
+);
 
+
+color: white;
+padding: 40px;
+border-radius: 10px;
+clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+max-width: 100%;
+
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+position: relative;
+z-index: 1;
+}
 
 
 
@@ -436,15 +458,9 @@ width: 47%;
 max-width: 100%;
 margin: 40px 0 40px auto;
 padding: 25px;
-background: #ffffff;
-border-radius: 10px;
-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
-border: 2px solid #007bff;
+background: transparent;
 transition: transform 0.3s ease-in-out; 
-background-image: url('Bomayan.jpg');
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat; 
+ 
 }
 
 
@@ -542,22 +558,48 @@ transform: scale(1.05);
 
 
 /* Tours and Trips Section */
+#tourbackground {
+    background: linear-gradient(to top, 
+    rgb(236, 224, 217) 0%,   /* top fade */
+    #3399cc 25%,              /* blue at the top */
+    #3399cc 75%,              /* blue in the middle */
+    rgb(236, 224, 217) 100%   /* bottom fade */
+
+    );
+
+    clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+    
+    color: white;
+    padding: 40px;
+   gap: 57px;
+    max-width: 55%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 95vh;
+    position: relative;
+    z-index: 1;
+    margin-left: 2%;
+}
+
 
 #tours-trips {
     height: auto;
     max-width: 100%;
     padding: 25px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
-    border: 2px solid #007bff;
+    background: transparent;
+   
     transition: transform 0.3s ease-in-out;
-background-image: url(serengeti.jpg);
+
     margin-left: 0; /* Moves the form to the left */
     margin-right: auto;
     width: 48%; /* Adjusted width */
     text-align: left;
-    background-size: contain;
+    
+    
+   
 }
 
 /* Form Title */
@@ -573,59 +615,83 @@ background-image: url(serengeti.jpg);
 #tours-tripsForm {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two-column layout */
-    gap: 16px;
+    gap: 28px;
     width: 100%;
     align-items: center;
     padding: 15px;
+    
+   
+   
 }
+
+#tours-trips .form-group input {
+    padding: 10px;
+    border: white;  
+    border-radius: 5px;  
+    font-size: 16px;
+    outline: none;  
+}
+
 
 /* Label Styling (Align Left) */
 #tours-tripsForm label {
     font-weight: bold;
-    color: #333;
+    color: white;
     font-size: 14px;
     text-align: left;
     width: 100%;
+    background-color: transparent;
+    display: block;
+    font-size: 14px;
+    gap: 10px;
+    
 }
 
 /* Input Fields & Select Box */
 #tours-tripsForm input,
 #tours-tripsForm select {
+    border: none;
     width: 100%;
     padding: 10px;
     font-size: 14px;
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    background: #f8f9fa;
+    background-color: transparent;
     outline: none;
-    text-align: right; 
+    text-align: right;
+   color: white;
 }
 
 /* Placeholder Styling */
-#tours-tripsForm input::placeholder,
+
 #tours-tripsForm select::placeholder {
     font-size: 12px;
-    color: #777;
+    color: white;
     text-align: right;
+    background-color: transparent;
 }
 
-/* File Upload */
-#tours-tripsForm input[type="file"] {
-    border: none;
-    padding: 8px;
-    background: #f1f1f1;
-    border-radius: 6px;
+
+
+#price {
+    background: #fff;
+    padding: 10px;
+   
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    width: 100%; /* Make it full-width if necessary */
 }
+
 
 /* Form Field Separation */
 #tours-tripsForm div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #f9f9f9;
+    border: 1px solid white; 
     padding: 10px;
     border-radius: 6px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 /* Submit Button */

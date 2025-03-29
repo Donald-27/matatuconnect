@@ -429,60 +429,89 @@ typeLine1();
 
 
 
+//Tours and trips booking section
 
 
-// DOM Elements
-const form = document.getElementById('tours-tripsForm');
-const packageSelect = document.getElementById('package');
-const priceInput = document.getElementById('price');
-const tourDateInput = document.getElementById('tour-date');
-const travelersInput = document.getElementById('travelers');
+document.addEventListener("DOMContentLoaded", function() {
+    const packageSelect = document.getElementById("package");
+    const travelersInput = document.getElementById("travelers");
+    const travelCostInput = document.getElementById("travelcost");
+    const tourDateInput = document.getElementById("tour-date");
+  
+    // Update Travel Cost when a package is selected
+    packageSelect.addEventListener("change", function() {
+      const selectedPackage = packageSelect.selectedOptions[0];
+      let price = 0;
+      let tourDate = "";
+  
+      if (selectedPackage) {
+        price = parseInt(selectedPackage.getAttribute("data-price"));
+        tourDate = selectedPackage.getAttribute("data-date");
+      }
+  
+      // Set the tour date and initial travel cost
+      tourDateInput.value = tourDate;
+      travelCostInput.value = price > 0 ? price.toLocaleString() : '';
+  
+      // Trigger travel cost update on number of travelers change
+      updateTravelCost(price);
+    });
+  
+    // Update Travel Cost when the number of travelers changes
 
-// Handle package selection
-packageSelect.addEventListener('change', function () {
-    // Get selected package option
-    const selectedOption = packageSelect.options[packageSelect.selectedIndex];
-    
-    // Extract price and date from data attributes
-    const price = selectedOption.getAttribute('data-price');
-    const date = selectedOption.getAttribute('data-date');
-    
-    // Set price and tour date inputs
-    priceInput.value = price ? price : '';
-    tourDateInput.value = date ? date : '';
-});
+    travelersInput.addEventListener("input", function() {
+      const selectedPackage = packageSelect.selectedOptions[0];
+      let price = 0;
+  
+      if (selectedPackage) {
+        price = parseInt(selectedPackage.getAttribute("data-price"));
+      }
+  
+      // Call the updateTravelCost function
+      updateTravelCost(price);
+    });
+  
+    // Function to update the travel cost based on the number of travelers
 
-// Handle form submission
-form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent default form submission
-
-    // Gather form data
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
-    const package = packageSelect.value;
-    const tourDate = tourDateInput.value;
-    const travelers = travelersInput.value;
-    const vehicle = document.getElementById('vehicle').value;
-    const price = priceInput.value;
-
-    // Basic validation
-    if (!name || !phone || !email || !package || !tourDate || !travelers || !vehicle || !price) {
-        alert("Please fill out all fields.");
-        return;
+    function updateTravelCost(packagePrice) {
+      let numberOfTravelers = parseInt(travelersInput.value) || 0;
+      let totalCost = 0;
+  
+      if (numberOfTravelers > 0 && packagePrice > 0) {
+        totalCost = packagePrice * numberOfTravelers;
+        travelCostInput.value = totalCost.toLocaleString(); 
+      } else {
+        travelCostInput.value = ''; // Clear the cost if invalid or no travelers
+      }
     }
-
-    // Display a confirmation message or process the booking
-    alert(`Tour Booking Successful!\n
-    Name: ${name}\n
-    Phone: ${phone}\n
-    Email: ${email}\n
-    Package: ${package}\n
-    Tour Date: ${tourDate}\n
-    Travelers: ${travelers}\n
-    Vehicle: ${vehicle}\n
-    Price: Ksh ${price}`);
-    
-    // Optionally, clear the form after submission
-    form.reset();
-});
+  });
+  
+  const express = require('express');
+  const app = express();
+  const bodyParser = require('body-parser');
+  
+  // Use body-parser middleware to handle form data
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
+  
+  app.post('/seats', (req, res) => {
+    const { name, phone, email, package, travelcost, numberOfTravelers } = req.body;
+  
+    // Here, you can process the data (e.g., save it to a database or log it)
+    console.log("Booking Details:", {
+      name,
+      phone,
+      email,
+      package,
+      travelcost,
+      numberOfTravelers,
+    });
+  
+    // Respond with a success message
+    res.json({ message: 'Tour booked successfully!' });
+  });
+  
+  app.listen(3000, () => {
+    console.log("Server is running on port 3000");
+  });
+  
