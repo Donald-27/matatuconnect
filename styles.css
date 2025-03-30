@@ -1,9 +1,10 @@
 
 
+
 html{scroll-behavior: smooth;
 
 }
-html, body { margin: 0; padding: 0;  display: flex; flex-direction: column; height: 100%; width: 100vw;};
+html, body { margin: 0; padding: 0;  display: flex; flex-direction: column; height: 100%; width: 100%;};
 
 
 
@@ -13,10 +14,13 @@ html, body { margin: 0; padding: 0;  display: flex; flex-direction: column; heig
 flex: 1;  
 }
 body {
-background-color: rgb(236, 224, 217);
+    width: 100;
+    background-color:  rgb(236, 224, 217);
+    height: 100vh;
 margin: 0;
 padding: 0;
 font-family: Arial, sans-serif;
+
 }
 
 /* Header section*/
@@ -321,38 +325,6 @@ padding: 10px;}
     z-index: 1;
 }
 
-#registration-background {background: linear-gradient(to bottom, 
-    rgb(236, 224, 217) 0%, 
-    #3399cc 15%,              
-    #3399cc 60%,              
-    rgb(236, 224, 217) 100%  
-);
-
-
-color: white;
-padding: 40px;
-border-radius: 10px;
-clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
-max-width: 100%;
-
-text-align: center;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-min-height: 100vh;
-position: relative;
-z-index: 1;
-}
-
-#registration-background img {
-    width: 100%; /* Makes the image cover the section */
-    height: 100%; /* Stretches it to fit */
-    object-fit: cover; /* Ensures proper scaling */
-  }
-
-
-
 
 /* Grid Container */
 .offices-container {
@@ -410,6 +382,7 @@ z-index: 1;
     border: 2px solid rgba(255, 255, 255, 0.3);
     color: #003366;
     animation: fadeInUp 1s ease-in-out;
+    margin-top: 50px;
 }
 
 /* Heading Styling for Both Containers */
@@ -467,19 +440,68 @@ z-index: 1;
 
 
 /* Vehicle Registration Section */
+
+
+
+
+
+
+
+
+
+#registration-background {background: linear-gradient(to bottom, 
+    rgb(236, 224, 217) 0%, 
+    #3399cc 15%,              
+    #3399cc 60%,              
+    rgb(236, 224, 217) 100%  
+);
+
+
+
+color: white;
+padding: 40px;
+border-radius: 10px;
+clip-path: polygon(0% 0%, 100% 10%, 100% 90%, 0% 100%);
+
+height: 750px;
+background-image: url('https://i.pinimg.com/736x/01/c1/df/01c1df4f63e381e6e0d668d7c5fc5746.jpg');
+background-size: cover;
+ background-position: center; /* Centers the image */
+ background-repeat: no-repeat; 
+
+max-width: 100%;
+
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+position: relative;
+z-index: 1;
+}
+
+#registration-background img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+  }
+
+
+
 #register-vehicle {
-height: auto;
-width: 50%;
+
+width: 100vw;
 max-width: 100%;
 margin: 40px 0 40px auto;
 padding: 25px;
 background: transparent;
-transition: transform 0.3s ease-in-out; 
-min-height: 100vh;
-margin-top: -60px;
+
+
+
+
 
 }
-
 
 #register-vehicle:hover {
 transform: translateY(-5px);
@@ -489,7 +511,7 @@ transform: translateY(-5px);
 text-align: center;
 margin-bottom: 20px;
 color: #007bff;
-font-size: 24px;
+font-size: 27px;
 font-weight: bold;
 }
 
@@ -498,9 +520,9 @@ font-weight: bold;
 display: grid;
 grid-template-columns: repeat(2, 1fr); /* Two-column layout */
 gap: 18px;
+
+    width: 100vw;
     
-    
-    width: 100%;
 }
 
 .full-width {
@@ -510,8 +532,8 @@ grid-column: span 2;
 /* Label Styling */
 #vehicleRegistrationForm label {
     font-weight: bold;
-    color: white;
-    font-size: 14px;
+    color: darkblue;
+    font-size: 20px;
     margin-bottom: 5px;
     display: block; 
     width: 80%;
@@ -528,38 +550,20 @@ max-width: 100%;
 #vehicleRegistrationForm input,
 #vehicleRegistrationForm select {
 width: 100%;
-max-width: 100%;
+max-width: 50%;
 padding: 15px;
 font-size: 15px;
 border: 2px solid #ddd;
 border-radius: 8px;
-color: darkgreen;
+color: darkblue;
 transition: all 0.3s ease-in-out;
 outline: none;
 background-color:transparent;
+font-size: 16px;
 
-backdrop-filter: blur(10px);
 }
 
 
-#registerhere {
-    position: absolute;
-    left: 0;
-    width: 50%; /* Covers 50% of the screen width */
-    height: auto;
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: left;
-    height: 100vh;
-    background: url('kilimanjaro.jpg') no-repeat center center;
-    background-size: cover;
-   
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white; /* Ensure text is readable */
-}
 
 
 #vehicleRegistrationForm div {
@@ -580,6 +584,9 @@ cursor: pointer;
 transition: background 0.3s, transform 0.2s;
 font-weight: bold;
 grid-column: span 2;
+width: 37%;
+margin-left: 30%;
+margin-top: 37px;
 }
 
 #vehicleRegistrationForm button:hover {
@@ -601,12 +608,17 @@ transform: scale(1.05);
 
     );
 
-    clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+    clip-path: polygon(0% 20%, 100% 0%, 100% 100%, 0% 80%);
+
+    background-image: url('https://i.pinimg.com/736x/81/f4/d2/81f4d27a7ab10a2d0406f2e6c4830a7f.jpg');
+   background-size: cover;
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; 
     
     color: white;
     padding: 40px;
    gap: 57px;
-    max-width: 44%;
+    max-width: 100vw;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -615,21 +627,22 @@ transform: scale(1.05);
     min-height: 95vh;
     position: relative;
     z-index: 1;
-    margin-left: 2%;
+  
 }
+
 
 
 #tours-trips {
     height: auto;
-    max-width: 100%;
+    max-width: 100vw;
     padding: 25px;
     background: transparent;
    
     transition: transform 0.3s ease-in-out;
 
-    margin-left: 0; /* Moves the form to the left */
+    
     margin-right: auto;
-    width: 48%; /* Adjusted width */
+    width: 75vw; 
     text-align: left;
     
     
@@ -662,7 +675,7 @@ transform: scale(1.05);
     padding: 10px;
     border: gray;  
     border-radius: 5px;  
-    font-size: 16px;
+    font-size: 17px;
     outline: none;  
 }
 
@@ -671,12 +684,12 @@ transform: scale(1.05);
 #tours-tripsForm label {
     font-weight: bold;
     color: white;
-    font-size: 14px;
+    font-size: 18px;
     text-align: left;
     width: 45%;
     background-color: transparent;
     display: block;
-    font-size: 14px;
+   
     gap: 10px;
     
 }
@@ -687,7 +700,7 @@ transform: scale(1.05);
     border: none;
     width: 100%;
     padding: 10px;
-    font-size: 14px;
+    font-size: 16px;
     background-color: transparent;
     outline: none;
     text-align: right;
@@ -741,6 +754,10 @@ transform: scale(1.05);
     transition: background 0.3s, transform 0.2s;
     font-weight: bold;
     grid-column: span 2;
+    text-emphasis: none;
+    letter-spacing: 4px;
+  width: 400px;
+  margin-left: 550px;
 }
 
 #tours-tripsForm button:hover {
@@ -1007,4 +1024,3 @@ gap: 20px;
         font-size: 14px;
     }
 }
-

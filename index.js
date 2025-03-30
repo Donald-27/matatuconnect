@@ -323,7 +323,7 @@ const images = [
 { name: "Kigali Genocide Memorial", url: "kigaligenocide.jpg", lat: -1.9441, lon: 30.0619 },
 { name: "Kruger National Park", url: "krugersa.jpg", lat: -23.9884, lon: 31.5547 },
 { name: "Cape Point", url: "capesa.jpg", lat: -33.9628, lon: 18.4098 },
-{ name: "Table Mountain", url: "tablemt.jpg", lat: -33.9628, lon: 18.4098 },
+{ name: "Table Mountain", url: "https://i.pinimg.com/474x/f9/81/e6/f981e6a75f3773fbbdc4d0449abec148.jpg", lat: -33.9628, lon: 18.4098 },
 { name: "Karoo & Namaqualand", url: "Namaqualand.jpg", lat: -33.9628, lon: 18.4098 },
 ];
 const carousel = document.querySelector(".carousel");
