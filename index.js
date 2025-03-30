@@ -303,17 +303,17 @@ booking.route === selectedRoute    );
 //image carousel section
 
 const images = [
- { name: "Masai Mara", url: "mara.jpg", lat: -1.4061, lon: 35.0081 },
- { name: "Amboseli National Park", url: "amboseli.jpg", lat: -2.645, lon: 37.2605 },
-  { name: "Tsavo National Park", url: "tsavo.jpg", lat: -3.1006, lon: 38.4853 },
-  { name: "Diani Beach", url: "diani.jpg", lat: -4.2803, lon: 39.5943 },
- { name: "Hell's Gate National Park", url: "hellsgate.jpg", lat: -0.8813, lon: 36.3754 },
-{ name: "Serengeti", url: "serengeti.jpg", lat: -2.3333, lon: 34.8333 },
- { name: "Zanzibar", url: "zanzibarbeach.jpg", lat: -6.1659, lon: 39.2026 },
-{ name: "Mount Kilimanjaro", url: "kilimanjaro.jpg", lat: -3.0758, lon: 37.3533 },
-{ name: "Selous Game Reserve", url: "selous.jpg", lat: -9.0004, lon: 37.417 },
-{ name: "Mafia Island", url: "mafia.jpg", lat: -7.8274, lon: 39.7304 },
-{ name: "Ruaha National Park", url: "downloadd.jpg", lat: -7.5, lon: 34.5 },
+ { name: "Masai Mara", url: "https://plus.unsplash.com/premium_photo-1664302700221-bd1549347986?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWFhc2FpJTIwbWFyYXxlbnwwfHwwfHx8MA%3D%3D", lat: -1.4061, lon: 35.0081 },
+ { name: "Amboseli National Park", url: "https://i.pinimg.com/736x/3a/03/14/3a03149f5dc2af0beabe930be5a5e5d2.jpg", lat: -2.645, lon: 37.2605 },
+  { name: "Tsavo National Park", url: "https://i.pinimg.com/474x/5d/2a/c7/5d2ac7db9090dbc186d5f6d76ae644e2.jpg", lat: -3.1006, lon: 38.4853 },
+  { name: "Diani Beach", url: "https://i.pinimg.com/474x/88/44/50/88445081730d2a9f9ba3d56c466e7fed.jpg", lat: -4.2803, lon: 39.5943 },
+ { name: "", url: "https://i.pinimg.com/736x/2b/f0/8e/2bf08ef68daa9457e012aceb4989fcd2.jpg", lat: -0.8813, lon: 36.3754 },
+{ name: "Serengeti", url: "https://i.pinimg.com/474x/0c/8d/64/0c8d64a053a6795078b613e59001208c.jpg", lat: -2.3333, lon: 34.8333 },
+ { name: "Zanzibar", url: "https://i.pinimg.com/474x/fc/b8/34/fcb834aa9eea0ba84c6aeea26553abb4.jpg", lat: -6.1659, lon: 39.2026 },
+{ name: "Mount Kilimanjaro", url: "https://i.pinimg.com/474x/03/87/42/038742c321f7df51780d9bf9dc094458.jpg", lat: -3.0758, lon: 37.3533 },
+{ name: "Selous Game Reserve", url: "https://i.pinimg.com/474x/88/ca/23/88ca23c9d53a513c24fdb7c82c84205b.jpg", lat: -9.0004, lon: 37.417 },
+{ name: "Mafia Island", url: "https://i.pinimg.com/474x/2a/70/77/2a70774dea7967fa56fc54f3d32f2a0a.jpg", lat: -7.8274, lon: 39.7304 },
+{ name: "Ruaha National Park", url: "https://i.pinimg.com/474x/f8/3b/d4/f83bd4e5a8f3235abbb82dfbda353296.jpg", lat: -7.5, lon: 34.5 },
 { name: "Queen Elizabeth National Park", url: "queenelizabethpark.jpg", lat: 0.2093, lon: 30.0062 },
 { name: "Murchison Falls National Park", url: "murchison.jpg", lat: 2.2604, lon: 31.8122 },
 { name: "Rwenzori Mountain", url: "ugmountain.jpg", lat: 0.3992, lon: 29.8794 },
@@ -329,7 +329,7 @@ const images = [
 const carousel = document.querySelector(".carousel");
 let currentIndex = 0;
 
-// Insert images dynamically with weather info containers
+// Insert images with weather info containers
 images.forEach(img => {
 const item = document.createElement("div");
  item.classList.add("carousel-item");
@@ -348,7 +348,7 @@ const item = document.createElement("div");
 fetchWeather(img, weatherInfo.id);
 });
 
-// Function to fetch and update weather
+//fetch weather openmeteo fromAPI
 function fetchWeather(location, elementId) {
 const url = `https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&longitude=${location.lon}&current_weather=true`;
  fetch(url)
@@ -391,9 +391,6 @@ currentIndex++;
 
 // Moves images every 4 seconds
 setInterval(smoothScroll, 4000);
-
-
-
 
 
 const line1Text = "Book An Adventure Both Within And Beyond the Borders.";
