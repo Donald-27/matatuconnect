@@ -466,15 +466,6 @@ z-index: 1;
 
 
 
-
-
-
-
-
-
-
-
-
 /* Vehicle Registration Section */
 #register-vehicle {
 height: auto;
@@ -485,7 +476,7 @@ padding: 25px;
 background: transparent;
 transition: transform 0.3s ease-in-out; 
 min-height: 100vh;
- transition: none; /* Disable animations affecting layout */
+margin-top: -60px;
 
 }
 
